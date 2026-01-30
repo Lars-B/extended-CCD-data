@@ -3,3 +3,5 @@
 geography/data/*.trees
 geography/data/combined_chains.log
 
+transmission/data/run1/*.trees
+

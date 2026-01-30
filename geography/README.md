@@ -10,8 +10,9 @@ This folder contains data and scripts related to **[phylogeography Covid dataset
 
 ## Source Data
 
-The data in this folder was obtained from the following repository:  
-[SarahNadeau/cov-europe-bdmm](https://github.com/SarahNadeau/cov-europe-bdmm).
+The data in this folder was obtained from the following repository:
+
+	- [SarahNadeau/cov-europe-bdmm](https://github.com/SarahNadeau/cov-europe-bdmm).
 
 Specifically we have used the posterior trees file from `analyses/with_hubei_migration_decrease/processed_results.tar.gz`.
 
