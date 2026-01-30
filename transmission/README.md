@@ -12,7 +12,7 @@ This folder contains data and scripts related to **[measles outbreak data]**.
 
 The data in this folder was obtained from the following repository:
 
-	- [CDC/Measles-Case-and-Genetic-Metadata](https://data.cdc.gov/Models/Measles-Case-and-Genetic-Metadata-Operation-Allies/b8tp-jsmh).
+	- [CDC/Measles-Case-and-Genetic-Metadata](https://data.cdc.gov/Models/Measles-Case-and-Genetic-Metadata-Operation-Allies/b8tp-jsmh)
 
 
 ## Reference
