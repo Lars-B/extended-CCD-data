@@ -1,0 +1,303 @@
+#NEXUS
+
+Begin taxa;
+	Dimensions ntax=145;
+		Taxlabels
+			EPI_ISL_402121|Hubei|2019-12-30
+			EPI_ISL_402125|Hubei|2019-12-26
+			EPI_ISL_402130|Hubei|2019-12-30
+			EPI_ISL_406596|France|2020-01-23
+			EPI_ISL_406716|Hubei|2020-01-02
+			EPI_ISL_406717|Hubei|2020-01-02
+			EPI_ISL_406798|Hubei|2019-12-26
+			EPI_ISL_406800|Hubei|2020-01-01
+			EPI_ISL_406862|Germany|2020-01-28
+			EPI_ISL_408430|France|2020-01-29
+			EPI_ISL_408431|France|2020-01-29
+			EPI_ISL_410486|France|2020-02-08
+			EPI_ISL_410546|Italy|2020-01-29
+			EPI_ISL_411951|OtherEuropean|2020-02-07
+			EPI_ISL_411957|Hubei|2020-01-08
+			EPI_ISL_412912|Germany|2020-02-25
+			EPI_ISL_412973|Italy|2020-02-20
+			EPI_ISL_412980|Hubei|2020-01-18
+			EPI_ISL_412981|Hubei|2020-01-18
+			EPI_ISL_413488|Germany|2020-02-28
+			EPI_ISL_413489|Italy|2020-03-03
+			EPI_ISL_413593|OtherEuropean|2020-02-29
+			EPI_ISL_414021|OtherEuropean|2020-02-27
+			EPI_ISL_414446|OtherEuropean|2020-03-03
+			EPI_ISL_414461|OtherEuropean|2020-03-04
+			EPI_ISL_414470|OtherEuropean|2020-03-06
+			EPI_ISL_414477|OtherEuropean|2020-03-01
+			EPI_ISL_414495|OtherEuropean|2020-03-08
+			EPI_ISL_414496|OtherEuropean|2020-03-04
+			EPI_ISL_414497|Germany|2020-02-25
+			EPI_ISL_414498|Germany|2020-02-26
+			EPI_ISL_414499|Germany|2020-02-26
+			EPI_ISL_414504|Germany|2020-02-26
+			EPI_ISL_414505|Germany|2020-02-27
+			EPI_ISL_414506|Germany|2020-02-27
+			EPI_ISL_414507|Germany|2020-03-03
+			EPI_ISL_414508|Germany|2020-02-27
+			EPI_ISL_414509|Germany|2020-02-28
+			EPI_ISL_414520|Germany|2020-03-02
+			EPI_ISL_414521|Germany|2020-03-02
+			EPI_ISL_414524|OtherEuropean|2020-03-01
+			EPI_ISL_414564|OtherEuropean|2020-03-08
+			EPI_ISL_414574|Germany|2020-02-28
+			EPI_ISL_414598|OtherEuropean|2020-03-05
+			EPI_ISL_414623|France|2020-02-25
+			EPI_ISL_414624|France|2020-02-26
+			EPI_ISL_414625|France|2020-02-26
+			EPI_ISL_414626|France|2020-02-29
+			EPI_ISL_414627|France|2020-03-02
+			EPI_ISL_414629|France|2020-03-03
+			EPI_ISL_414630|France|2020-03-03
+			EPI_ISL_414631|France|2020-03-04
+			EPI_ISL_414632|France|2020-03-04
+			EPI_ISL_414633|France|2020-03-04
+			EPI_ISL_414634|France|2020-03-04
+			EPI_ISL_414635|France|2020-03-04
+			EPI_ISL_414636|France|2020-03-04
+			EPI_ISL_414637|France|2020-03-04
+			EPI_ISL_414638|France|2020-03-04
+			EPI_ISL_414642|OtherEuropean|2020-03-08
+			EPI_ISL_415143|OtherEuropean|2020-03-02
+			EPI_ISL_415149|OtherEuropean|2020-03-01
+			EPI_ISL_415646|OtherEuropean|2020-03-03
+			EPI_ISL_415649|France|2020-03-05
+			EPI_ISL_415650|France|2020-03-02
+			EPI_ISL_415651|France|2020-03-05
+			EPI_ISL_415652|France|2020-03-05
+			EPI_ISL_415653|France|2020-03-08
+			EPI_ISL_415698|OtherEuropean|2020-02-27
+			EPI_ISL_415704|OtherEuropean|2020-03-04
+			EPI_ISL_416475|OtherEuropean|2020-03-03
+			EPI_ISL_416483|OtherEuropean|2020-02-26
+			EPI_ISL_416485|OtherEuropean|2020-02-27
+			EPI_ISL_416488|OtherEuropean|2020-03-03
+			EPI_ISL_416493|France|2020-03-08
+			EPI_ISL_416494|France|2020-03-04
+			EPI_ISL_416502|France|2020-02-26
+			EPI_ISL_416503|France|2020-03-01
+			EPI_ISL_416504|France|2020-03-02
+			EPI_ISL_416505|France|2020-03-02
+			EPI_ISL_416506|France|2020-03-03
+			EPI_ISL_416507|France|2020-03-05
+			EPI_ISL_416508|France|2020-03-06
+			EPI_ISL_416509|France|2020-03-06
+			EPI_ISL_416510|France|2020-03-06
+			EPI_ISL_416511|France|2020-03-07
+			EPI_ISL_416512|France|2020-03-07
+			EPI_ISL_416513|France|2020-03-07
+			EPI_ISL_416746|France|2020-03-03
+			EPI_ISL_416747|France|2020-03-04
+			EPI_ISL_416748|France|2020-03-04
+			EPI_ISL_416749|France|2020-03-04
+			EPI_ISL_416750|France|2020-03-06
+			EPI_ISL_416751|France|2020-03-05
+			EPI_ISL_416752|France|2020-03-04
+			EPI_ISL_416753|France|2020-03-06
+			EPI_ISL_416754|France|2020-03-06
+			EPI_ISL_416756|France|2020-03-06
+			EPI_ISL_416757|France|2020-03-07
+			EPI_ISL_416758|France|2020-03-08
+			EPI_ISL_417007|OtherEuropean|2020-03-07
+			EPI_ISL_417205|OtherEuropean|2020-03-02
+			EPI_ISL_417206|OtherEuropean|2020-03-06
+			EPI_ISL_417234|OtherEuropean|2020-03-02
+			EPI_ISL_417333|France|2020-03-04
+			EPI_ISL_417334|France|2020-03-04
+			EPI_ISL_417335|France|2020-03-06
+			EPI_ISL_417336|France|2020-03-06
+			EPI_ISL_417337|France|2020-03-07
+			EPI_ISL_417338|France|2020-03-07
+			EPI_ISL_417339|France|2020-03-08
+			EPI_ISL_417340|France|2020-03-07
+			EPI_ISL_417418|Italy|2020-03-01
+			EPI_ISL_417419|Italy|2020-03-01
+			EPI_ISL_417421|Italy|2020-03-01
+			EPI_ISL_417423|Italy|2020-03-01
+			EPI_ISL_417432|OtherEuropean|2020-03-08
+			EPI_ISL_417445|Italy|2020-02-24
+			EPI_ISL_417447|Italy|2020-02-24
+			EPI_ISL_417489|OtherEuropean|2020-02-29
+			EPI_ISL_417491|Italy|2020-03-03
+			EPI_ISL_417684|OtherEuropean|2020-03-06
+			EPI_ISL_417880|OtherEuropean|2020-03-08
+			EPI_ISL_417921|Italy|2020-03-01
+			EPI_ISL_417922|Italy|2020-02-28
+			EPI_ISL_417923|Italy|2020-03-04
+			EPI_ISL_417979|OtherEuropean|2020-03-03
+			EPI_ISL_417981|OtherEuropean|2020-03-02
+			EPI_ISL_418011|OtherEuropean|2020-03-04
+			EPI_ISL_418218|France|2020-02-21
+			EPI_ISL_418219|France|2020-02-26
+			EPI_ISL_418220|France|2020-02-28
+			EPI_ISL_418221|France|2020-03-02
+			EPI_ISL_418222|France|2020-03-04
+			EPI_ISL_418223|France|2020-03-05
+			EPI_ISL_418224|France|2020-03-08
+			EPI_ISL_418225|France|2020-03-08
+			EPI_ISL_418243|OtherEuropean|2020-02-28
+			EPI_ISL_418245|OtherEuropean|2020-03-01
+			EPI_ISL_418246|OtherEuropean|2020-03-01
+			EPI_ISL_418247|OtherEuropean|2020-02-26
+			EPI_ISL_418248|OtherEuropean|2020-03-01
+			EPI_ISL_418249|OtherEuropean|2020-03-03
+			EPI_ISL_418251|OtherEuropean|2020-02-25
+			EPI_ISL_418252|OtherEuropean|2020-03-04
+			;
+End;
+Begin trees;
+	Translate
+		   1 EPI_ISL_402121|Hubei|2019-12-30,
+		   2 EPI_ISL_402125|Hubei|2019-12-26,
+		   3 EPI_ISL_402130|Hubei|2019-12-30,
+		   4 EPI_ISL_406596|France|2020-01-23,
+		   5 EPI_ISL_406716|Hubei|2020-01-02,
+		   6 EPI_ISL_406717|Hubei|2020-01-02,
+		   7 EPI_ISL_406798|Hubei|2019-12-26,
+		   8 EPI_ISL_406800|Hubei|2020-01-01,
+		   9 EPI_ISL_406862|Germany|2020-01-28,
+		  10 EPI_ISL_408430|France|2020-01-29,
+		  11 EPI_ISL_408431|France|2020-01-29,
+		  12 EPI_ISL_410486|France|2020-02-08,
+		  13 EPI_ISL_410546|Italy|2020-01-29,
+		  14 EPI_ISL_411951|OtherEuropean|2020-02-07,
+		  15 EPI_ISL_411957|Hubei|2020-01-08,
+		  16 EPI_ISL_412912|Germany|2020-02-25,
+		  17 EPI_ISL_412973|Italy|2020-02-20,
+		  18 EPI_ISL_412980|Hubei|2020-01-18,
+		  19 EPI_ISL_412981|Hubei|2020-01-18,
+		  20 EPI_ISL_413488|Germany|2020-02-28,
+		  21 EPI_ISL_413489|Italy|2020-03-03,
+		  22 EPI_ISL_413593|OtherEuropean|2020-02-29,
+		  23 EPI_ISL_414021|OtherEuropean|2020-02-27,
+		  24 EPI_ISL_414446|OtherEuropean|2020-03-03,
+		  25 EPI_ISL_414461|OtherEuropean|2020-03-04,
+		  26 EPI_ISL_414470|OtherEuropean|2020-03-06,
+		  27 EPI_ISL_414477|OtherEuropean|2020-03-01,
+		  28 EPI_ISL_414495|OtherEuropean|2020-03-08,
+		  29 EPI_ISL_414496|OtherEuropean|2020-03-04,
+		  30 EPI_ISL_414497|Germany|2020-02-25,
+		  31 EPI_ISL_414498|Germany|2020-02-26,
+		  32 EPI_ISL_414499|Germany|2020-02-26,
+		  33 EPI_ISL_414504|Germany|2020-02-26,
+		  34 EPI_ISL_414505|Germany|2020-02-27,
+		  35 EPI_ISL_414506|Germany|2020-02-27,
+		  36 EPI_ISL_414507|Germany|2020-03-03,
+		  37 EPI_ISL_414508|Germany|2020-02-27,
+		  38 EPI_ISL_414509|Germany|2020-02-28,
+		  39 EPI_ISL_414520|Germany|2020-03-02,
+		  40 EPI_ISL_414521|Germany|2020-03-02,
+		  41 EPI_ISL_414524|OtherEuropean|2020-03-01,
+		  42 EPI_ISL_414564|OtherEuropean|2020-03-08,
+		  43 EPI_ISL_414574|Germany|2020-02-28,
+		  44 EPI_ISL_414598|OtherEuropean|2020-03-05,
+		  45 EPI_ISL_414623|France|2020-02-25,
+		  46 EPI_ISL_414624|France|2020-02-26,
+		  47 EPI_ISL_414625|France|2020-02-26,
+		  48 EPI_ISL_414626|France|2020-02-29,
+		  49 EPI_ISL_414627|France|2020-03-02,
+		  50 EPI_ISL_414629|France|2020-03-03,
+		  51 EPI_ISL_414630|France|2020-03-03,
+		  52 EPI_ISL_414631|France|2020-03-04,
+		  53 EPI_ISL_414632|France|2020-03-04,
+		  54 EPI_ISL_414633|France|2020-03-04,
+		  55 EPI_ISL_414634|France|2020-03-04,
+		  56 EPI_ISL_414635|France|2020-03-04,
+		  57 EPI_ISL_414636|France|2020-03-04,
+		  58 EPI_ISL_414637|France|2020-03-04,
+		  59 EPI_ISL_414638|France|2020-03-04,
+		  60 EPI_ISL_414642|OtherEuropean|2020-03-08,
+		  61 EPI_ISL_415143|OtherEuropean|2020-03-02,
+		  62 EPI_ISL_415149|OtherEuropean|2020-03-01,
+		  63 EPI_ISL_415646|OtherEuropean|2020-03-03,
+		  64 EPI_ISL_415649|France|2020-03-05,
+		  65 EPI_ISL_415650|France|2020-03-02,
+		  66 EPI_ISL_415651|France|2020-03-05,
+		  67 EPI_ISL_415652|France|2020-03-05,
+		  68 EPI_ISL_415653|France|2020-03-08,
+		  69 EPI_ISL_415698|OtherEuropean|2020-02-27,
+		  70 EPI_ISL_415704|OtherEuropean|2020-03-04,
+		  71 EPI_ISL_416475|OtherEuropean|2020-03-03,
+		  72 EPI_ISL_416483|OtherEuropean|2020-02-26,
+		  73 EPI_ISL_416485|OtherEuropean|2020-02-27,
+		  74 EPI_ISL_416488|OtherEuropean|2020-03-03,
+		  75 EPI_ISL_416493|France|2020-03-08,
+		  76 EPI_ISL_416494|France|2020-03-04,
+		  77 EPI_ISL_416502|France|2020-02-26,
+		  78 EPI_ISL_416503|France|2020-03-01,
+		  79 EPI_ISL_416504|France|2020-03-02,
+		  80 EPI_ISL_416505|France|2020-03-02,
+		  81 EPI_ISL_416506|France|2020-03-03,
+		  82 EPI_ISL_416507|France|2020-03-05,
+		  83 EPI_ISL_416508|France|2020-03-06,
+		  84 EPI_ISL_416509|France|2020-03-06,
+		  85 EPI_ISL_416510|France|2020-03-06,
+		  86 EPI_ISL_416511|France|2020-03-07,
+		  87 EPI_ISL_416512|France|2020-03-07,
+		  88 EPI_ISL_416513|France|2020-03-07,
+		  89 EPI_ISL_416746|France|2020-03-03,
+		  90 EPI_ISL_416747|France|2020-03-04,
+		  91 EPI_ISL_416748|France|2020-03-04,
+		  92 EPI_ISL_416749|France|2020-03-04,
+		  93 EPI_ISL_416750|France|2020-03-06,
+		  94 EPI_ISL_416751|France|2020-03-05,
+		  95 EPI_ISL_416752|France|2020-03-04,
+		  96 EPI_ISL_416753|France|2020-03-06,
+		  97 EPI_ISL_416754|France|2020-03-06,
+		  98 EPI_ISL_416756|France|2020-03-06,
+		  99 EPI_ISL_416757|France|2020-03-07,
+		 100 EPI_ISL_416758|France|2020-03-08,
+		 101 EPI_ISL_417007|OtherEuropean|2020-03-07,
+		 102 EPI_ISL_417205|OtherEuropean|2020-03-02,
+		 103 EPI_ISL_417206|OtherEuropean|2020-03-06,
+		 104 EPI_ISL_417234|OtherEuropean|2020-03-02,
+		 105 EPI_ISL_417333|France|2020-03-04,
+		 106 EPI_ISL_417334|France|2020-03-04,
+		 107 EPI_ISL_417335|France|2020-03-06,
+		 108 EPI_ISL_417336|France|2020-03-06,
+		 109 EPI_ISL_417337|France|2020-03-07,
+		 110 EPI_ISL_417338|France|2020-03-07,
+		 111 EPI_ISL_417339|France|2020-03-08,
+		 112 EPI_ISL_417340|France|2020-03-07,
+		 113 EPI_ISL_417418|Italy|2020-03-01,
+		 114 EPI_ISL_417419|Italy|2020-03-01,
+		 115 EPI_ISL_417421|Italy|2020-03-01,
+		 116 EPI_ISL_417423|Italy|2020-03-01,
+		 117 EPI_ISL_417432|OtherEuropean|2020-03-08,
+		 118 EPI_ISL_417445|Italy|2020-02-24,
+		 119 EPI_ISL_417447|Italy|2020-02-24,
+		 120 EPI_ISL_417489|OtherEuropean|2020-02-29,
+		 121 EPI_ISL_417491|Italy|2020-03-03,
+		 122 EPI_ISL_417684|OtherEuropean|2020-03-06,
+		 123 EPI_ISL_417880|OtherEuropean|2020-03-08,
+		 124 EPI_ISL_417921|Italy|2020-03-01,
+		 125 EPI_ISL_417922|Italy|2020-02-28,
+		 126 EPI_ISL_417923|Italy|2020-03-04,
+		 127 EPI_ISL_417979|OtherEuropean|2020-03-03,
+		 128 EPI_ISL_417981|OtherEuropean|2020-03-02,
+		 129 EPI_ISL_418011|OtherEuropean|2020-03-04,
+		 130 EPI_ISL_418218|France|2020-02-21,
+		 131 EPI_ISL_418219|France|2020-02-26,
+		 132 EPI_ISL_418220|France|2020-02-28,
+		 133 EPI_ISL_418221|France|2020-03-02,
+		 134 EPI_ISL_418222|France|2020-03-04,
+		 135 EPI_ISL_418223|France|2020-03-05,
+		 136 EPI_ISL_418224|France|2020-03-08,
+		 137 EPI_ISL_418225|France|2020-03-08,
+		 138 EPI_ISL_418243|OtherEuropean|2020-02-28,
+		 139 EPI_ISL_418245|OtherEuropean|2020-03-01,
+		 140 EPI_ISL_418246|OtherEuropean|2020-03-01,
+		 141 EPI_ISL_418247|OtherEuropean|2020-02-26,
+		 142 EPI_ISL_418248|OtherEuropean|2020-03-01,
+		 143 EPI_ISL_418249|OtherEuropean|2020-03-03,
+		 144 EPI_ISL_418251|OtherEuropean|2020-02-25,
+		 145 EPI_ISL_418252|OtherEuropean|2020-03-04
+;
+
+tree ext_CCD_MAP = (1[&type=Hubei,support=1.0]:0.0372739,((((2[&type=Hubei,support=1.0]:0.0139129,(((((((4[&type=France,support=1.0]:0.0413281,14[&type=OtherEuropean,support=1.0]:0.0861081)[&type=Hubei,support=1.0]:0.0282022,(8[&type=Hubei,support=1.0]:0.0163651,15[&type=Hubei,support=1.0]:0.0355458)[&type=Hubei,support=1.0]:0.0154099)[&type=Hubei,support=0.4722222222222222]:0.0113038,(6[&type=Hubei,support=1.0]:0.0166981,12[&type=France,support=1.0]:0.0293385)[&type=Hubei,support=1.0]:0.0173851)[&type=Hubei,support=0.5]:0.00995136,(9[&type=Germany,support=1.0]:0.040187,(((16[&type=Germany,support=1.0]:0.0383354,(((23[&type=OtherEuropean,support=1.0]:0.0370938,69[&type=OtherEuropean,support=1.0]:0.0372147)[&type=OtherEuropean,support=1.0]:0.0150037,(26[&type=OtherEuropean,support=1.0]:0.0561651,129[&type=OtherEuropean,support=1.0]:0.0512527)[&type=OtherEuropean,support=1.0]:0.0190335)[&type=OtherEuropean,support=0.10818713450292397]:0.0149586,((((((24[&type=OtherEuropean,support=1.0]:0.0287205,42[&type=OtherEuropean,support=1.0]:0.0428121)[&type=OtherEuropean,support=1.0]:0.0199176,36[&type=Germany,support=1.0]:0.0353118)[&type=OtherEuropean,support=0.4650655021834061]:0.0120468,104[&type=OtherEuropean,support=1.0]:0.0334749)[&type=OtherEuropean,support=0.3076923076923077]:0.0106776,122[&type=OtherEuropean,support=1.0]:0.0459967)[&type=OtherEuropean,support=0.1440677966101695]:0.00914502,89[&type=France,support=1.0]:0.0434135)[&type=OtherEuropean,support=0.1288135593220339]:0.00615169,71[&type=OtherEuropean,support=1.0]:0.035241)[&type=OtherEuropean,support=0.057480980557903634]:0.0146131)[&type=OtherEuropean,support=0.4845605700712589]:0.0113601)[&type=OtherEuropean,support=0.08897485493230174]:0.0105518,125[&type=Italy,support=1.0]:0.0430049)[&type=Italy,support=0.05343069077422346]:0.024898,((((((((17[&type=Italy,support=1.0]:0.0253703,((41[&type=OtherEuropean,support=1.0]:0.0382004,121[&type=Italy,support=1.0]:0.0435765)[&type=Italy,support=1.0]:0.0304021,((52[&type=France,support=1.0]:0.0557666,115[&type=Italy,support=1.0]:0.0442264)[&type=Italy,support=1.0]:0.0238034,114[&type=Italy,support=1.0]:0.0544397)[&type=Italy,support=0.37333333333333335]:0.015865)[&type=Italy,support=0.4166666666666667]:0.016018)[&type=Italy,support=0.25]:0.0193319,(116[&type=Italy,support=1.0]:0.0438037,119[&type=Italy,support=1.0]:0.0316335)[&type=Italy,support=1.0]:0.0222658)[&type=Italy,support=0.5]:0.00902614,(27[&type=OtherEuropean,support=1.0]:0.0483688,113[&type=Italy,support=1.0]:0.0436566)[&type=Italy,support=1.0]:0.0222365)[&type=Italy,support=0.3333333333333333]:0.0148299,(124[&type=Italy,support=1.0]:0.0440608,(141[&type=OtherEuropean,support=1.0]:0.0382552,144[&type=OtherEuropean,support=1.0]:0.0355419)[&type=OtherEuropean,support=1.0]:0.0317984)[&type=Italy,support=0.6328125]:0.0126473)[&type=Italy,support=0.25]:0.00622711,(((21[&type=Italy,support=1.0]:0.0493964,(46[&type=France,support=1.0]:0.0211423,76[&type=France,support=1.0]:0.0385291)[&type=France,support=1.0]:0.0226924)[&type=Italy,support=0.6048439181916039]:0.0253238,((22[&type=OtherEuropean,support=1.0]:0.0224531,63[&type=OtherEuropean,support=1.0]:0.0306482)[&type=OtherEuropean,support=1.0]:0.0435164,25[&type=OtherEuropean,support=1.0]:0.078296)[&type=Italy,support=0.7019230769230769]:0.0107662)[&type=Italy,support=0.3181818181818182]:0.0106619,((28[&type=OtherEuropean,support=1.0]:0.032274,101[&type=OtherEuropean,support=1.0]:0.029618)[&type=OtherEuropean,support=1.0]:0.0324288,126[&type=Italy,support=1.0]:0.0361334)[&type=Italy,support=0.4797248742428909]:0.0323677)[&type=Italy,support=0.16666666666666666]:0.00844641)[&type=Italy,support=0.018518518518518517]:0.00888782,((((((50[&type=France,support=1.0]:0.0267527,((68[&type=France,support=1.0]:0.0328655,97[&type=France,support=1.0]:0.0276245)[&type=France,support=1.0]:0.0151376,94[&type=France,support=1.0]:0.0307089)[&type=France,support=0.5866666666666667]:0.00994226)[&type=France,support=0.38461538461538464]:0.00683406,(66[&type=France,support=1.0]:0.0306713,(93[&type=France,support=1.0]:0.0155162,105[&type=France,support=1.0]:0.0100517)[&type=France,support=1.0]:0.0268857)[&type=France,support=1.0]:0.0072944)[&type=France,support=1.0]:0.00317821,67[&type=France,support=1.0]:0.0307341)[&type=France,support=1.0]:0.000964636,(((75[&type=France,support=1.0]:0.0324221,90[&type=France,support=1.0]:0.0226858)[&type=France,support=1.0]:0.0147765,(98[&type=France,support=1.0]:0.0327454,(109[&type=France,support=1.0]:0.0153479,111[&type=France,support=1.0]:0.0180806)[&type=France,support=1.0]:0.0247659)[&type=France,support=1.0]:0.0092801)[&type=France,support=0.23076923076923078]:0.010242,(92[&type=France,support=1.0]:0.0286936,(95[&type=France,support=1.0]:0.0286625,106[&type=France,support=1.0]:0.0222204)[&type=France,support=1.0]:0.0111853)[&type=France,support=0.43902439024390244]:0.00839724)[&type=France,support=1.0]:0.0112683)[&type=France,support=0.009900990099009901]:0.00684699,(99[&type=France,support=1.0]:0.0295579,134[&type=France,support=1.0]:0.021344)[&type=France,support=1.0]:0.0169394)[&type=France,support=0.05345911949685535]:0.0129184,70[&type=OtherEuropean,support=1.0]:0.0332698)[&type=France,support=0.015192878338278933]:0.0273702)[&type=Italy,support=0.06779661016949153]:0.00803938,(((((47[&type=France,support=1.0]:0.022144,((77[&type=France,support=1.0]:0.0181155,(((79[&type=France,support=1.0]:0.0203482,85[&type=France,support=1.0]:0.0294877)[&type=France,support=1.0]:0.0134216,86[&type=France,support=1.0]:0.0369795)[&type=France,support=0.35135135135135137]:0.0126674,(81[&type=France,support=1.0]:0.0225163,96[&type=France,support=1.0]:0.0294118)[&type=France,support=1.0]:0.0141832)[&type=France,support=1.0]:0.00965499)[&type=France,support=1.0]:0.00149107,(83[&type=France,support=1.0]:0.0292556,110[&type=France,support=1.0]:0.0370362)[&type=France,support=1.0]:0.0130319)[&type=France,support=1.0]:0.00230773)[&type=France,support=1.0]:0.00100509,55[&type=France,support=1.0]:0.0376845)[&type=France,support=1.0]:0.0113153,(((((49[&type=France,support=1.0]:0.0203898,(((51[&type=France,support=1.0]:0.0360245,(112[&type=France,support=1.0]:0.0370042,132[&type=France,support=1.0]:0.0150603)[&type=France,support=1.0]:0.0105856)[&type=France,support=0.6956521739130435]:0.00567066,80[&type=France,support=1.0]:0.0204433)[&type=France,support=0.4]:0.00650926,136[&type=France,support=1.0]:0.0393158)[&type=France,support=1.0]:0.000550756)[&type=France,support=1.0]:0.00163316,133[&type=France,support=1.0]:0.0304695)[&type=France,support=1.0]:0.0093761,91[&type=France,support=1.0]:0.0377667)[&type=France,support=1.0]:0.00253533,(60[&type=OtherEuropean,support=1.0]:0.039258,65[&type=France,support=1.0]:0.0266445)[&type=France,support=1.0]:0.00907213)[&type=France,support=1.0]:0.00493742,((56[&type=France,support=1.0]:0.0231403,57[&type=France,support=1.0]:0.0231839)[&type=France,support=1.0]:0.0163956,(64[&type=France,support=1.0]:0.0365039,(84[&type=France,support=1.0]:0.0245811,(87[&type=France,support=1.0]:0.0252471,88[&type=France,support=1.0]:0.0265264)[&type=France,support=1.0]:0.0102946)[&type=France,support=0.39289964299881]:0.0159625)[&type=France,support=0.9958677685950413]:0.00649863)[&type=France,support=0.36]:0.00486343)[&type=France,support=1.0]:1.23934e-05)[&type=France,support=0.014925373134328358]:0.0028125,130[&type=France,support=1.0]:0.00742994)[&type=France,support=0.006689297124600639]:0.00868252,(((((48[&type=France,support=1.0]:0.0143308,((58[&type=France,support=1.0]:0.0271611,135[&type=France,support=1.0]:0.0252917)[&type=France,support=1.0]:0.0103602,59[&type=France,support=1.0]:0.0269917)[&type=France,support=0.39814814814814814]:0.00868891)[&type=France,support=0.15763546798029557]:0.00689017,54[&type=France,support=1.0]:0.0224955)[&type=France,support=0.07792207792207792]:0.00707307,137[&type=France,support=1.0]:0.0361544)[&type=France,support=0.0708955223880597]:0.00732937,53[&type=France,support=1.0]:0.0336779)[&type=France,support=0.15864191402759853]:0.0148905,(100[&type=France,support=1.0]:0.0494992,(108[&type=France,support=1.0]:0.0396336,131[&type=France,support=1.0]:0.0168246)[&type=France,support=1.0]:0.0178292)[&type=France,support=0.3913503704823832]:0.0200807)[&type=France,support=0.6833333333333333]:0.0121254)[&type=France,support=0.6385251911595266]:0.0214762)[&type=Italy,support=0.06157635467980296]:0.00934811,118[&type=Italy,support=1.0]:0.0704483)[&type=Italy,support=0.09046849757673667]:0.00898183)[&type=Italy,support=0.16788970424727595]:0.0215197)[&type=Hubei,support=0.8514003294892916]:0.0580257)[&type=Hubei,support=1.0]:0.00114132,(11[&type=France,support=1.0]:0.0383613,(((((20[&type=Germany,support=1.0]:0.00996401,37[&type=Germany,support=1.0]:0.00723177)[&type=Germany,support=1.0]:0.0250437,(32[&type=Germany,support=1.0]:0.0244005,35[&type=Germany,support=1.0]:0.0269719)[&type=Germany,support=1.0]:0.0144505)[&type=Germany,support=0.5144422310756972]:0.0286268,(((30[&type=Germany,support=1.0]:0.0192302,((31[&type=Germany,support=1.0]:0.0209886,34[&type=Germany,support=1.0]:0.0230564)[&type=Germany,support=1.0]:0.0174088,(33[&type=Germany,support=1.0]:0.020713,43[&type=Germany,support=1.0]:0.0343359)[&type=Germany,support=1.0]:0.0157946)[&type=Germany,support=0.1094224924012158]:0.0150243)[&type=Germany,support=0.10815307820299501]:0.0158968,74[&type=OtherEuropean,support=1.0]:0.0565773)[&type=Germany,support=0.2231686541737649]:0.0159098,38[&type=Germany,support=1.0]:0.0347699)[&type=Germany,support=0.07673205860442016]:0.0209422)[&type=Germany,support=0.4291196388261851]:0.0763173,117[&type=OtherEuropean,support=1.0]:0.108073)[&type=Hubei,support=0.8740740740740741]:0.0278894,107[&type=France,support=1.0]:0.101968)[&type=Hubei,support=0.21428571428571427]:0.0286803)[&type=Hubei,support=0.3333333333333333]:0.0338896)[&type=Hubei,support=1.0]:0.00397904,(18[&type=Hubei,support=1.0]:0.0386588,(((((((((29[&type=OtherEuropean,support=1.0]:0.0405311,142[&type=OtherEuropean,support=1.0]:0.0264606)[&type=OtherEuropean,support=1.0]:0.0156093,(44[&type=OtherEuropean,support=1.0]:0.0364473,143[&type=OtherEuropean,support=1.0]:0.0307624)[&type=OtherEuropean,support=1.0]:0.0206206)[&type=OtherEuropean,support=0.124]:0.0128342,73[&type=OtherEuropean,support=1.0]:0.0296255)[&type=OtherEuropean,support=0.22377622377622378]:0.00961977,103[&type=OtherEuropean,support=1.0]:0.04573)[&type=OtherEuropean,support=0.11458333333333333]:0.00873091,45[&type=France,support=1.0]:0.0309467)[&type=OtherEuropean,support=0.19653179190751446]:0.00842001,72[&type=OtherEuropean,support=1.0]:0.0200251)[&type=OtherEuropean,support=0.026441265713047248]:0.0101693,102[&type=OtherEuropean,support=1.0]:0.0577645)[&type=OtherEuropean,support=0.25802543912780135]:0.0217922,128[&type=OtherEuropean,support=1.0]:0.0876551)[&type=OtherEuropean,support=0.9885245901639345]:0.0542253,((40[&type=Germany,support=1.0]:0.113536,((139[&type=OtherEuropean,support=1.0]:0.0206884,140[&type=OtherEuropean,support=1.0]:0.0206904)[&type=OtherEuropean,support=1.0]:0.0253498,145[&type=OtherEuropean,support=1.0]:0.0541476)[&type=OtherEuropean,support=0.9961600396383005]:0.0611101)[&type=Hubei,support=0.797584541062802]:0.0288866,127[&type=OtherEuropean,support=1.0]:0.116706)[&type=Hubei,support=0.3221498371335505]:0.0270702)[&type=Hubei,support=0.2017059708981435]:0.0183644)[&type=Hubei,support=0.394770723977419]:0.0406163)[&type=Hubei,support=1.0]:0.00448634,(5[&type=Hubei,support=1.0]:0.016844,123[&type=OtherEuropean,support=1.0]:0.107247)[&type=Hubei,support=1.0]:0.0129447)[&type=Hubei,support=0.06666666666666667]:0.0138181)[&type=Hubei,support=0.09523809523809523]:0.0143001,(10[&type=France,support=1.0]:0.0789801,(((13[&type=Italy,support=1.0]:0.00914692,((61[&type=OtherEuropean,support=1.0]:0.0523884,138[&type=OtherEuropean,support=1.0]:0.0459985)[&type=OtherEuropean,support=1.0]:0.0159256,62[&type=OtherEuropean,support=1.0]:0.0532011)[&type=OtherEuropean,support=0.39961240310077517]:0.0327538)[&type=Italy,support=0.3627450980392157]:0.00989542,((78[&type=France,support=1.0]:0.0235226,82[&type=France,support=1.0]:0.0344515)[&type=France,support=1.0]:0.065251,120[&type=OtherEuropean,support=1.0]:0.0781487)[&type=Italy,support=0.8657696094519199]:0.0197204)[&type=Italy,support=0.08420116840233681]:0.0420342,(19[&type=Hubei,support=1.0]:0.0171025,39[&type=Germany,support=1.0]:0.137321)[&type=Hubei,support=1.0]:0.0385458)[&type=Hubei,support=0.7106518282988871]:0.00915146)[&type=Hubei,support=0.1680064308681672]:0.0267937)[&type=Hubei,support=0.029411764705882353]:0.0129697,3[&type=Hubei,support=1.0]:0.0377278)[&type=Hubei,support=0.09049773755656108]:0.0124713,7[&type=Hubei,support=1.0]:0.035924)[&type=Hubei,support=0.10963455149501661]:0.0173085)[&type=Hubei,support=0.059615765498118437]:0;
+End;

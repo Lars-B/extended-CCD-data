@@ -1,0 +1,5 @@
+.DS_Store
+
+geography/data/*.trees
+geography/data/combined_chains.log
+
