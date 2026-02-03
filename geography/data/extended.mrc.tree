@@ -1,0 +1,303 @@
+#NEXUS
+
+Begin taxa;
+	Dimensions ntax=145;
+		Taxlabels
+			EPI_ISL_402121|Hubei|2019-12-30
+			EPI_ISL_402125|Hubei|2019-12-26
+			EPI_ISL_402130|Hubei|2019-12-30
+			EPI_ISL_406596|France|2020-01-23
+			EPI_ISL_406716|Hubei|2020-01-02
+			EPI_ISL_406717|Hubei|2020-01-02
+			EPI_ISL_406798|Hubei|2019-12-26
+			EPI_ISL_406800|Hubei|2020-01-01
+			EPI_ISL_406862|Germany|2020-01-28
+			EPI_ISL_408430|France|2020-01-29
+			EPI_ISL_408431|France|2020-01-29
+			EPI_ISL_410486|France|2020-02-08
+			EPI_ISL_410546|Italy|2020-01-29
+			EPI_ISL_411951|OtherEuropean|2020-02-07
+			EPI_ISL_411957|Hubei|2020-01-08
+			EPI_ISL_412912|Germany|2020-02-25
+			EPI_ISL_412973|Italy|2020-02-20
+			EPI_ISL_412980|Hubei|2020-01-18
+			EPI_ISL_412981|Hubei|2020-01-18
+			EPI_ISL_413488|Germany|2020-02-28
+			EPI_ISL_413489|Italy|2020-03-03
+			EPI_ISL_413593|OtherEuropean|2020-02-29
+			EPI_ISL_414021|OtherEuropean|2020-02-27
+			EPI_ISL_414446|OtherEuropean|2020-03-03
+			EPI_ISL_414461|OtherEuropean|2020-03-04
+			EPI_ISL_414470|OtherEuropean|2020-03-06
+			EPI_ISL_414477|OtherEuropean|2020-03-01
+			EPI_ISL_414495|OtherEuropean|2020-03-08
+			EPI_ISL_414496|OtherEuropean|2020-03-04
+			EPI_ISL_414497|Germany|2020-02-25
+			EPI_ISL_414498|Germany|2020-02-26
+			EPI_ISL_414499|Germany|2020-02-26
+			EPI_ISL_414504|Germany|2020-02-26
+			EPI_ISL_414505|Germany|2020-02-27
+			EPI_ISL_414506|Germany|2020-02-27
+			EPI_ISL_414507|Germany|2020-03-03
+			EPI_ISL_414508|Germany|2020-02-27
+			EPI_ISL_414509|Germany|2020-02-28
+			EPI_ISL_414520|Germany|2020-03-02
+			EPI_ISL_414521|Germany|2020-03-02
+			EPI_ISL_414524|OtherEuropean|2020-03-01
+			EPI_ISL_414564|OtherEuropean|2020-03-08
+			EPI_ISL_414574|Germany|2020-02-28
+			EPI_ISL_414598|OtherEuropean|2020-03-05
+			EPI_ISL_414623|France|2020-02-25
+			EPI_ISL_414624|France|2020-02-26
+			EPI_ISL_414625|France|2020-02-26
+			EPI_ISL_414626|France|2020-02-29
+			EPI_ISL_414627|France|2020-03-02
+			EPI_ISL_414629|France|2020-03-03
+			EPI_ISL_414630|France|2020-03-03
+			EPI_ISL_414631|France|2020-03-04
+			EPI_ISL_414632|France|2020-03-04
+			EPI_ISL_414633|France|2020-03-04
+			EPI_ISL_414634|France|2020-03-04
+			EPI_ISL_414635|France|2020-03-04
+			EPI_ISL_414636|France|2020-03-04
+			EPI_ISL_414637|France|2020-03-04
+			EPI_ISL_414638|France|2020-03-04
+			EPI_ISL_414642|OtherEuropean|2020-03-08
+			EPI_ISL_415143|OtherEuropean|2020-03-02
+			EPI_ISL_415149|OtherEuropean|2020-03-01
+			EPI_ISL_415646|OtherEuropean|2020-03-03
+			EPI_ISL_415649|France|2020-03-05
+			EPI_ISL_415650|France|2020-03-02
+			EPI_ISL_415651|France|2020-03-05
+			EPI_ISL_415652|France|2020-03-05
+			EPI_ISL_415653|France|2020-03-08
+			EPI_ISL_415698|OtherEuropean|2020-02-27
+			EPI_ISL_415704|OtherEuropean|2020-03-04
+			EPI_ISL_416475|OtherEuropean|2020-03-03
+			EPI_ISL_416483|OtherEuropean|2020-02-26
+			EPI_ISL_416485|OtherEuropean|2020-02-27
+			EPI_ISL_416488|OtherEuropean|2020-03-03
+			EPI_ISL_416493|France|2020-03-08
+			EPI_ISL_416494|France|2020-03-04
+			EPI_ISL_416502|France|2020-02-26
+			EPI_ISL_416503|France|2020-03-01
+			EPI_ISL_416504|France|2020-03-02
+			EPI_ISL_416505|France|2020-03-02
+			EPI_ISL_416506|France|2020-03-03
+			EPI_ISL_416507|France|2020-03-05
+			EPI_ISL_416508|France|2020-03-06
+			EPI_ISL_416509|France|2020-03-06
+			EPI_ISL_416510|France|2020-03-06
+			EPI_ISL_416511|France|2020-03-07
+			EPI_ISL_416512|France|2020-03-07
+			EPI_ISL_416513|France|2020-03-07
+			EPI_ISL_416746|France|2020-03-03
+			EPI_ISL_416747|France|2020-03-04
+			EPI_ISL_416748|France|2020-03-04
+			EPI_ISL_416749|France|2020-03-04
+			EPI_ISL_416750|France|2020-03-06
+			EPI_ISL_416751|France|2020-03-05
+			EPI_ISL_416752|France|2020-03-04
+			EPI_ISL_416753|France|2020-03-06
+			EPI_ISL_416754|France|2020-03-06
+			EPI_ISL_416756|France|2020-03-06
+			EPI_ISL_416757|France|2020-03-07
+			EPI_ISL_416758|France|2020-03-08
+			EPI_ISL_417007|OtherEuropean|2020-03-07
+			EPI_ISL_417205|OtherEuropean|2020-03-02
+			EPI_ISL_417206|OtherEuropean|2020-03-06
+			EPI_ISL_417234|OtherEuropean|2020-03-02
+			EPI_ISL_417333|France|2020-03-04
+			EPI_ISL_417334|France|2020-03-04
+			EPI_ISL_417335|France|2020-03-06
+			EPI_ISL_417336|France|2020-03-06
+			EPI_ISL_417337|France|2020-03-07
+			EPI_ISL_417338|France|2020-03-07
+			EPI_ISL_417339|France|2020-03-08
+			EPI_ISL_417340|France|2020-03-07
+			EPI_ISL_417418|Italy|2020-03-01
+			EPI_ISL_417419|Italy|2020-03-01
+			EPI_ISL_417421|Italy|2020-03-01
+			EPI_ISL_417423|Italy|2020-03-01
+			EPI_ISL_417432|OtherEuropean|2020-03-08
+			EPI_ISL_417445|Italy|2020-02-24
+			EPI_ISL_417447|Italy|2020-02-24
+			EPI_ISL_417489|OtherEuropean|2020-02-29
+			EPI_ISL_417491|Italy|2020-03-03
+			EPI_ISL_417684|OtherEuropean|2020-03-06
+			EPI_ISL_417880|OtherEuropean|2020-03-08
+			EPI_ISL_417921|Italy|2020-03-01
+			EPI_ISL_417922|Italy|2020-02-28
+			EPI_ISL_417923|Italy|2020-03-04
+			EPI_ISL_417979|OtherEuropean|2020-03-03
+			EPI_ISL_417981|OtherEuropean|2020-03-02
+			EPI_ISL_418011|OtherEuropean|2020-03-04
+			EPI_ISL_418218|France|2020-02-21
+			EPI_ISL_418219|France|2020-02-26
+			EPI_ISL_418220|France|2020-02-28
+			EPI_ISL_418221|France|2020-03-02
+			EPI_ISL_418222|France|2020-03-04
+			EPI_ISL_418223|France|2020-03-05
+			EPI_ISL_418224|France|2020-03-08
+			EPI_ISL_418225|France|2020-03-08
+			EPI_ISL_418243|OtherEuropean|2020-02-28
+			EPI_ISL_418245|OtherEuropean|2020-03-01
+			EPI_ISL_418246|OtherEuropean|2020-03-01
+			EPI_ISL_418247|OtherEuropean|2020-02-26
+			EPI_ISL_418248|OtherEuropean|2020-03-01
+			EPI_ISL_418249|OtherEuropean|2020-03-03
+			EPI_ISL_418251|OtherEuropean|2020-02-25
+			EPI_ISL_418252|OtherEuropean|2020-03-04
+			;
+End;
+Begin trees;
+	Translate
+		   1 EPI_ISL_402121|Hubei|2019-12-30,
+		   2 EPI_ISL_402125|Hubei|2019-12-26,
+		   3 EPI_ISL_402130|Hubei|2019-12-30,
+		   4 EPI_ISL_406596|France|2020-01-23,
+		   5 EPI_ISL_406716|Hubei|2020-01-02,
+		   6 EPI_ISL_406717|Hubei|2020-01-02,
+		   7 EPI_ISL_406798|Hubei|2019-12-26,
+		   8 EPI_ISL_406800|Hubei|2020-01-01,
+		   9 EPI_ISL_406862|Germany|2020-01-28,
+		  10 EPI_ISL_408430|France|2020-01-29,
+		  11 EPI_ISL_408431|France|2020-01-29,
+		  12 EPI_ISL_410486|France|2020-02-08,
+		  13 EPI_ISL_410546|Italy|2020-01-29,
+		  14 EPI_ISL_411951|OtherEuropean|2020-02-07,
+		  15 EPI_ISL_411957|Hubei|2020-01-08,
+		  16 EPI_ISL_412912|Germany|2020-02-25,
+		  17 EPI_ISL_412973|Italy|2020-02-20,
+		  18 EPI_ISL_412980|Hubei|2020-01-18,
+		  19 EPI_ISL_412981|Hubei|2020-01-18,
+		  20 EPI_ISL_413488|Germany|2020-02-28,
+		  21 EPI_ISL_413489|Italy|2020-03-03,
+		  22 EPI_ISL_413593|OtherEuropean|2020-02-29,
+		  23 EPI_ISL_414021|OtherEuropean|2020-02-27,
+		  24 EPI_ISL_414446|OtherEuropean|2020-03-03,
+		  25 EPI_ISL_414461|OtherEuropean|2020-03-04,
+		  26 EPI_ISL_414470|OtherEuropean|2020-03-06,
+		  27 EPI_ISL_414477|OtherEuropean|2020-03-01,
+		  28 EPI_ISL_414495|OtherEuropean|2020-03-08,
+		  29 EPI_ISL_414496|OtherEuropean|2020-03-04,
+		  30 EPI_ISL_414497|Germany|2020-02-25,
+		  31 EPI_ISL_414498|Germany|2020-02-26,
+		  32 EPI_ISL_414499|Germany|2020-02-26,
+		  33 EPI_ISL_414504|Germany|2020-02-26,
+		  34 EPI_ISL_414505|Germany|2020-02-27,
+		  35 EPI_ISL_414506|Germany|2020-02-27,
+		  36 EPI_ISL_414507|Germany|2020-03-03,
+		  37 EPI_ISL_414508|Germany|2020-02-27,
+		  38 EPI_ISL_414509|Germany|2020-02-28,
+		  39 EPI_ISL_414520|Germany|2020-03-02,
+		  40 EPI_ISL_414521|Germany|2020-03-02,
+		  41 EPI_ISL_414524|OtherEuropean|2020-03-01,
+		  42 EPI_ISL_414564|OtherEuropean|2020-03-08,
+		  43 EPI_ISL_414574|Germany|2020-02-28,
+		  44 EPI_ISL_414598|OtherEuropean|2020-03-05,
+		  45 EPI_ISL_414623|France|2020-02-25,
+		  46 EPI_ISL_414624|France|2020-02-26,
+		  47 EPI_ISL_414625|France|2020-02-26,
+		  48 EPI_ISL_414626|France|2020-02-29,
+		  49 EPI_ISL_414627|France|2020-03-02,
+		  50 EPI_ISL_414629|France|2020-03-03,
+		  51 EPI_ISL_414630|France|2020-03-03,
+		  52 EPI_ISL_414631|France|2020-03-04,
+		  53 EPI_ISL_414632|France|2020-03-04,
+		  54 EPI_ISL_414633|France|2020-03-04,
+		  55 EPI_ISL_414634|France|2020-03-04,
+		  56 EPI_ISL_414635|France|2020-03-04,
+		  57 EPI_ISL_414636|France|2020-03-04,
+		  58 EPI_ISL_414637|France|2020-03-04,
+		  59 EPI_ISL_414638|France|2020-03-04,
+		  60 EPI_ISL_414642|OtherEuropean|2020-03-08,
+		  61 EPI_ISL_415143|OtherEuropean|2020-03-02,
+		  62 EPI_ISL_415149|OtherEuropean|2020-03-01,
+		  63 EPI_ISL_415646|OtherEuropean|2020-03-03,
+		  64 EPI_ISL_415649|France|2020-03-05,
+		  65 EPI_ISL_415650|France|2020-03-02,
+		  66 EPI_ISL_415651|France|2020-03-05,
+		  67 EPI_ISL_415652|France|2020-03-05,
+		  68 EPI_ISL_415653|France|2020-03-08,
+		  69 EPI_ISL_415698|OtherEuropean|2020-02-27,
+		  70 EPI_ISL_415704|OtherEuropean|2020-03-04,
+		  71 EPI_ISL_416475|OtherEuropean|2020-03-03,
+		  72 EPI_ISL_416483|OtherEuropean|2020-02-26,
+		  73 EPI_ISL_416485|OtherEuropean|2020-02-27,
+		  74 EPI_ISL_416488|OtherEuropean|2020-03-03,
+		  75 EPI_ISL_416493|France|2020-03-08,
+		  76 EPI_ISL_416494|France|2020-03-04,
+		  77 EPI_ISL_416502|France|2020-02-26,
+		  78 EPI_ISL_416503|France|2020-03-01,
+		  79 EPI_ISL_416504|France|2020-03-02,
+		  80 EPI_ISL_416505|France|2020-03-02,
+		  81 EPI_ISL_416506|France|2020-03-03,
+		  82 EPI_ISL_416507|France|2020-03-05,
+		  83 EPI_ISL_416508|France|2020-03-06,
+		  84 EPI_ISL_416509|France|2020-03-06,
+		  85 EPI_ISL_416510|France|2020-03-06,
+		  86 EPI_ISL_416511|France|2020-03-07,
+		  87 EPI_ISL_416512|France|2020-03-07,
+		  88 EPI_ISL_416513|France|2020-03-07,
+		  89 EPI_ISL_416746|France|2020-03-03,
+		  90 EPI_ISL_416747|France|2020-03-04,
+		  91 EPI_ISL_416748|France|2020-03-04,
+		  92 EPI_ISL_416749|France|2020-03-04,
+		  93 EPI_ISL_416750|France|2020-03-06,
+		  94 EPI_ISL_416751|France|2020-03-05,
+		  95 EPI_ISL_416752|France|2020-03-04,
+		  96 EPI_ISL_416753|France|2020-03-06,
+		  97 EPI_ISL_416754|France|2020-03-06,
+		  98 EPI_ISL_416756|France|2020-03-06,
+		  99 EPI_ISL_416757|France|2020-03-07,
+		 100 EPI_ISL_416758|France|2020-03-08,
+		 101 EPI_ISL_417007|OtherEuropean|2020-03-07,
+		 102 EPI_ISL_417205|OtherEuropean|2020-03-02,
+		 103 EPI_ISL_417206|OtherEuropean|2020-03-06,
+		 104 EPI_ISL_417234|OtherEuropean|2020-03-02,
+		 105 EPI_ISL_417333|France|2020-03-04,
+		 106 EPI_ISL_417334|France|2020-03-04,
+		 107 EPI_ISL_417335|France|2020-03-06,
+		 108 EPI_ISL_417336|France|2020-03-06,
+		 109 EPI_ISL_417337|France|2020-03-07,
+		 110 EPI_ISL_417338|France|2020-03-07,
+		 111 EPI_ISL_417339|France|2020-03-08,
+		 112 EPI_ISL_417340|France|2020-03-07,
+		 113 EPI_ISL_417418|Italy|2020-03-01,
+		 114 EPI_ISL_417419|Italy|2020-03-01,
+		 115 EPI_ISL_417421|Italy|2020-03-01,
+		 116 EPI_ISL_417423|Italy|2020-03-01,
+		 117 EPI_ISL_417432|OtherEuropean|2020-03-08,
+		 118 EPI_ISL_417445|Italy|2020-02-24,
+		 119 EPI_ISL_417447|Italy|2020-02-24,
+		 120 EPI_ISL_417489|OtherEuropean|2020-02-29,
+		 121 EPI_ISL_417491|Italy|2020-03-03,
+		 122 EPI_ISL_417684|OtherEuropean|2020-03-06,
+		 123 EPI_ISL_417880|OtherEuropean|2020-03-08,
+		 124 EPI_ISL_417921|Italy|2020-03-01,
+		 125 EPI_ISL_417922|Italy|2020-02-28,
+		 126 EPI_ISL_417923|Italy|2020-03-04,
+		 127 EPI_ISL_417979|OtherEuropean|2020-03-03,
+		 128 EPI_ISL_417981|OtherEuropean|2020-03-02,
+		 129 EPI_ISL_418011|OtherEuropean|2020-03-04,
+		 130 EPI_ISL_418218|France|2020-02-21,
+		 131 EPI_ISL_418219|France|2020-02-26,
+		 132 EPI_ISL_418220|France|2020-02-28,
+		 133 EPI_ISL_418221|France|2020-03-02,
+		 134 EPI_ISL_418222|France|2020-03-04,
+		 135 EPI_ISL_418223|France|2020-03-05,
+		 136 EPI_ISL_418224|France|2020-03-08,
+		 137 EPI_ISL_418225|France|2020-03-08,
+		 138 EPI_ISL_418243|OtherEuropean|2020-02-28,
+		 139 EPI_ISL_418245|OtherEuropean|2020-03-01,
+		 140 EPI_ISL_418246|OtherEuropean|2020-03-01,
+		 141 EPI_ISL_418247|OtherEuropean|2020-02-26,
+		 142 EPI_ISL_418248|OtherEuropean|2020-03-01,
+		 143 EPI_ISL_418249|OtherEuropean|2020-03-03,
+		 144 EPI_ISL_418251|OtherEuropean|2020-02-25,
+		 145 EPI_ISL_418252|OtherEuropean|2020-03-04
+;
+
+tree MRC = (1[&type=Hubei,support=1.0]:1,2[&type=Hubei,support=1.0]:1,3[&type=Hubei,support=1.0]:1,4[&type=France,support=1.0]:1,5[&type=Hubei,support=1.0]:1,6[&type=Hubei,support=1.0]:1,7[&type=Hubei,support=1.0]:1,8[&type=Hubei,support=1.0]:1,9[&type=Germany,support=1.0]:1,(10[&type=France,support=1.0]:1,(19[&type=Hubei,support=1.0]:1,39[&type=Germany,support=1.0]:1)[&type=Hubei,support=1.0]:1)[&type=Hubei,support=0.6718010782264275]:1,11[&type=France,support=1.0]:1,12[&type=France,support=1.0]:1,((138[&type=OtherEuropean,support=1.0]:1,61[&type=OtherEuropean,support=1.0]:1,62[&type=OtherEuropean,support=1.0]:1)[&type=OtherEuropean,support=0.5106172296182199]:1,13[&type=Italy,support=1.0]:1,(82[&type=France,support=1.0]:1,78[&type=France,support=1.0]:1)[&type=France,support=0.860820772362196]:1,120[&type=OtherEuropean,support=1.0]:1)[&type=Italy,support=0.7811640444493344]:1,14[&type=OtherEuropean,support=1.0]:1,15[&type=Hubei,support=1.0]:1,((129[&type=OtherEuropean,support=1.0]:1,(36[&type=Germany,support=1.0]:1,71[&type=OtherEuropean,support=1.0]:1,104[&type=OtherEuropean,support=1.0]:1,42[&type=OtherEuropean,support=1.0]:1,24[&type=OtherEuropean,support=1.0]:1,89[&type=France,support=1.0]:1,122[&type=OtherEuropean,support=1.0]:1)[&type=Italy,support=0.5297612498624711]:1,69[&type=OtherEuropean,support=1.0]:1,16[&type=Germany,support=1.0]:1,23[&type=OtherEuropean,support=1.0]:1,26[&type=OtherEuropean,support=1.0]:1,125[&type=Italy,support=1.0]:1)[&type=Italy,support=0.8565298712729673]:1,17[&type=Italy,support=1.0]:1,((76[&type=France,support=1.0]:1,46[&type=France,support=1.0]:1)[&type=France,support=0.5922543734184179]:1,21[&type=Italy,support=1.0]:1)[&type=Italy,support=0.9196831334580262]:1,(22[&type=OtherEuropean,support=1.0]:1,63[&type=OtherEuropean,support=1.0]:1)[&type=OtherEuropean,support=0.7502475519859171]:1,25[&type=OtherEuropean,support=1.0]:1,27[&type=OtherEuropean,support=1.0]:1,(28[&type=OtherEuropean,support=1.0]:1,101[&type=OtherEuropean,support=1.0]:1,126[&type=Italy,support=1.0]:1)[&type=Italy,support=0.9660028606007262]:1,(41[&type=OtherEuropean,support=1.0]:1,121[&type=Italy,support=1.0]:1)[&type=Italy,support=0.9741445703597755]:1,((130[&type=France,support=1.0]:1,132[&type=France,support=1.0]:1,133[&type=France,support=1.0]:1,136[&type=France,support=1.0]:1,47[&type=France,support=1.0]:1,49[&type=France,support=1.0]:1,51[&type=France,support=1.0]:1,55[&type=France,support=1.0]:1,(56[&type=France,support=1.0]:1,57[&type=France,support=1.0]:1)[&type=France,support=0.994278798547695]:1,60[&type=OtherEuropean,support=1.0]:1,64[&type=France,support=1.0]:1,65[&type=France,support=1.0]:1,77[&type=France,support=1.0]:1,79[&type=France,support=1.0]:1,80[&type=France,support=1.0]:1,81[&type=France,support=1.0]:1,83[&type=France,support=1.0]:1,(88[&type=France,support=1.0]:1,84[&type=France,support=1.0]:1,87[&type=France,support=1.0]:1)[&type=France,support=0.9984596765320717]:1,85[&type=France,support=1.0]:1,86[&type=France,support=1.0]:1,91[&type=France,support=1.0]:1,96[&type=France,support=1.0]:1,110[&type=France,support=1.0]:1,112[&type=France,support=1.0]:1)[&type=France,support=0.9911981516118384]:1,((108[&type=France,support=1.0]:1,131[&type=France,support=1.0]:1,100[&type=France,support=1.0]:1)[&type=France,support=0.6561777973374409]:1,(135[&type=France,support=1.0]:1,137[&type=France,support=1.0]:1,48[&type=France,support=1.0]:1,53[&type=France,support=1.0]:1,54[&type=France,support=1.0]:1,58[&type=France,support=1.0]:1,59[&type=France,support=1.0]:1)[&type=France,support=0.9976895147981076]:1)[&type=France,support=0.6261414897128397]:1)[&type=France,support=0.9457586093079546]:1,((99[&type=France,support=1.0]:1,134[&type=France,support=1.0]:1)[&type=France,support=0.9930685443943228]:1,50[&type=France,support=1.0]:1,66[&type=France,support=1.0]:1,67[&type=France,support=1.0]:1,68[&type=France,support=1.0]:1,70[&type=OtherEuropean,support=1.0]:1,75[&type=France,support=1.0]:1,90[&type=France,support=1.0]:1,92[&type=France,support=1.0]:1,(105[&type=France,support=1.0]:1,93[&type=France,support=1.0]:1)[&type=France,support=0.9995599075805919]:1,94[&type=France,support=1.0]:1,95[&type=France,support=1.0]:1,97[&type=France,support=1.0]:1,98[&type=France,support=1.0]:1,106[&type=France,support=1.0]:1,(109[&type=France,support=1.0]:1,111[&type=France,support=1.0]:1)[&type=France,support=0.9980195841126637]:1)[&type=France,support=0.8366156892947519]:1,52[&type=France,support=1.0]:1,113[&type=Italy,support=1.0]:1,114[&type=Italy,support=1.0]:1,115[&type=Italy,support=1.0]:1,116[&type=Italy,support=1.0]:1,118[&type=Italy,support=1.0]:1,119[&type=Italy,support=1.0]:1,124[&type=Italy,support=1.0]:1,(144[&type=OtherEuropean,support=1.0]:1,141[&type=OtherEuropean,support=1.0]:1)[&type=OtherEuropean,support=0.5716800528110904]:1)[&type=Italy,support=0.8921773572450215]:1,((128[&type=OtherEuropean,support=1.0]:1,(102[&type=OtherEuropean,support=1.0]:1,103[&type=OtherEuropean,support=1.0]:1,72[&type=OtherEuropean,support=1.0]:1,73[&type=OtherEuropean,support=1.0]:1,44[&type=OtherEuropean,support=1.0]:1,45[&type=France,support=1.0]:1,142[&type=OtherEuropean,support=1.0]:1,143[&type=OtherEuropean,support=1.0]:1,29[&type=OtherEuropean,support=1.0]:1)[&type=OtherEuropean,support=0.8202222466718011]:1)[&type=OtherEuropean,support=0.6054571460006601]:1,40[&type=Germany,support=1.0]:1,(145[&type=OtherEuropean,support=1.0]:1,(139[&type=OtherEuropean,support=1.0]:1,140[&type=OtherEuropean,support=1.0]:1)[&type=OtherEuropean,support=0.9443283089448784]:1)[&type=OtherEuropean,support=0.8033887116294421]:1,18[&type=Hubei,support=1.0]:1,127[&type=OtherEuropean,support=1.0]:1)[&type=Hubei,support=0.999889976895148]:1,(((32[&type=Germany,support=1.0]:1,35[&type=Germany,support=1.0]:1)[&type=Germany,support=0.5139179227637803]:1,(20[&type=Germany,support=1.0]:1,37[&type=Germany,support=1.0]:1)[&type=Germany,support=1.0]:1)[&type=Germany,support=0.9948289140719551]:1,33[&type=Germany,support=1.0]:1,34[&type=Germany,support=1.0]:1,38[&type=Germany,support=1.0]:1,74[&type=OtherEuropean,support=1.0]:1,43[&type=Germany,support=1.0]:1,30[&type=Germany,support=1.0]:1,31[&type=Germany,support=1.0]:1)[&type=Germany,support=0.8789745846627792]:1,107[&type=France,support=1.0]:1,117[&type=OtherEuropean,support=1.0]:1,123[&type=OtherEuropean,support=1.0]:1)[&type=Hubei,support=1.0]:1;
+End;
