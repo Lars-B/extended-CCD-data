@@ -1,0 +1,94 @@
+#NEXUS
+
+Begin taxa;
+	Dimensions ntax=41;
+		Taxlabels
+			MVs_NewMexico.USA_38.21
+			MVs_Virginia.USA_35.21
+			MVs_Virginia.USA_35.21_4
+			MVs_Virginia.USA_35.21_5
+			MVs_Virginia.USA_35.21_6
+			MVs_Virginia.USA_36.21
+			MVs_Virginia.USA_36.21_2
+			MVs_Virginia.USA_36.21_3
+			MVs_Virginia.USA_36.21_4
+			MVs_Virginia.USA_37.21
+			MVs_Virginia.USA_37.21_2
+			MVs_Virginia.USA_38.21
+			MVs_Virginia.USA_39.21
+			MVs_Virginia.USA_39.21_2
+			MVs_Virginia.USA_39.21_3
+			MVs_Virginia.USA_39.21_4
+			MVs_Virginia.USA_40.21
+			MVs_Virginia.USA_40.21_2
+			MVs_Virginia.USA_40.21_3
+			MVs_Virginia.USA_41.21
+			MVs_Wisconsin.USA_35.21
+			MVs_Wisconsin.USA_37.21
+			MVs_Wisconsin.USA_37.21_2
+			MVs_Wisconsin.USA_37.21_3
+			MVs_Wisconsin.USA_37.21_4
+			MVs_Wisconsin.USA_37.21_5
+			MVs_Wisconsin.USA_38.21
+			MVs_Wisconsin.USA_39.21
+			MVs_Wisconsin.USA_39.21_10
+			MVs_Wisconsin.USA_39.21_11
+			MVs_Wisconsin.USA_39.21_12
+			MVs_Wisconsin.USA_39.21_13
+			MVs_Wisconsin.USA_39.21_14
+			MVs_Wisconsin.USA_39.21_15
+			MVs_Wisconsin.USA_39.21_2
+			MVs_Wisconsin.USA_39.21_3
+			MVs_Wisconsin.USA_39.21_4
+			MVs_Wisconsin.USA_39.21_5
+			MVs_Wisconsin.USA_39.21_6
+			MVs_Wisconsin.USA_39.21_7
+			MVs_Wisconsin.USA_39.21_8_1
+			;
+End;
+Begin trees;
+	Translate
+		     1 MVs_NewMexico.USA_38.21,
+		     2 MVs_Virginia.USA_35.21,
+		     3 MVs_Virginia.USA_35.21_4,
+		     4 MVs_Virginia.USA_35.21_5,
+		     5 MVs_Virginia.USA_35.21_6,
+		     6 MVs_Virginia.USA_36.21,
+		     7 MVs_Virginia.USA_36.21_2,
+		     8 MVs_Virginia.USA_36.21_3,
+		     9 MVs_Virginia.USA_36.21_4,
+		    10 MVs_Virginia.USA_37.21,
+		    11 MVs_Virginia.USA_37.21_2,
+		    12 MVs_Virginia.USA_38.21,
+		    13 MVs_Virginia.USA_39.21,
+		    14 MVs_Virginia.USA_39.21_2,
+		    15 MVs_Virginia.USA_39.21_3,
+		    16 MVs_Virginia.USA_39.21_4,
+		    17 MVs_Virginia.USA_40.21,
+		    18 MVs_Virginia.USA_40.21_2,
+		    19 MVs_Virginia.USA_40.21_3,
+		    20 MVs_Virginia.USA_41.21,
+		    21 MVs_Wisconsin.USA_35.21,
+		    22 MVs_Wisconsin.USA_37.21,
+		    23 MVs_Wisconsin.USA_37.21_2,
+		    24 MVs_Wisconsin.USA_37.21_3,
+		    25 MVs_Wisconsin.USA_37.21_4,
+		    26 MVs_Wisconsin.USA_37.21_5,
+		    27 MVs_Wisconsin.USA_38.21,
+		    28 MVs_Wisconsin.USA_39.21,
+		    29 MVs_Wisconsin.USA_39.21_10,
+		    30 MVs_Wisconsin.USA_39.21_11,
+		    31 MVs_Wisconsin.USA_39.21_12,
+		    32 MVs_Wisconsin.USA_39.21_13,
+		    33 MVs_Wisconsin.USA_39.21_14,
+		    34 MVs_Wisconsin.USA_39.21_15,
+		    35 MVs_Wisconsin.USA_39.21_2,
+		    36 MVs_Wisconsin.USA_39.21_3,
+		    37 MVs_Wisconsin.USA_39.21_4,
+		    38 MVs_Wisconsin.USA_39.21_5,
+		    39 MVs_Wisconsin.USA_39.21_6,
+		    40 MVs_Wisconsin.USA_39.21_7,
+		    41 MVs_Wisconsin.USA_39.21_8_1
+;
+tree tCCD_MAP = ((((((((((1[&blockcount=-1,&transmission.ancestor=1]:0.028840407599697037,(29[&blockcount=-1,&transmission.ancestor=29]:0.03983095806554927,34[&blockcount=0.0,&transmission.ancestor=29]:0.05794633192451904)[&blockcount=0.0,&transmission.ancestor=1]:0.01650430843776403)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.01518578052314018,(27[&blockcount=0.0,&transmission.ancestor=Unknown]:0.05981932913913639,32[&blockcount=0.0,&transmission.ancestor=Unknown]:0.058531417002520014)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.019579035444883586)[&blockcount=-1,&transmission.ancestor=6]:0.003504314514460538,(22[&blockcount=-1,&transmission.ancestor=22]:0.02914019510781957,(33[&blockcount=0.0,&transmission.ancestor=Unknown]:0.06061268800877404,41[&blockcount=0.0,&transmission.ancestor=Unknown]:0.058714809581073134)[&blockcount=0.0,&transmission.ancestor=22]:0.015267551862976219)[&blockcount=0.0,&transmission.ancestor=6]:0.025862596114323233)[&blockcount=-1,&transmission.ancestor=6]:0.004757124840989113,(35[&blockcount=0.0,&transmission.ancestor=Unknown]:0.06222746695242125,36[&blockcount=0.0,&transmission.ancestor=Unknown]:0.06066797412446829)[&blockcount=0.0,&transmission.ancestor=6]:0.02748283667379406)[&blockcount=0.0,&transmission.ancestor=6]:0.01182323090012984,(((((13[&blockcount=0.0,&transmission.ancestor=38]:0.05502214300502774,38[&blockcount=-1,&transmission.ancestor=38]:0.03999310401519064)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.023004655782733897,37[&blockcount=0.0,&transmission.ancestor=Unknown]:0.0609202545419339)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.01956730646818171,39[&blockcount=0.0,&transmission.ancestor=Unknown]:0.0591094715048389)[&blockcount=-1,&transmission.ancestor=6]:0.007425660324951663,(23[&blockcount=-1,&transmission.ancestor=23]:0.02953355996480297,31[&blockcount=0.0,&transmission.ancestor=23]:0.061958366150544536)[&blockcount=0.0,&transmission.ancestor=6]:0.021898970026308362)[&blockcount=-1,&transmission.ancestor=6]:0.007432934424878579,((24[&blockcount=-1,&transmission.ancestor=24]:0.034597611770241156,(28[&blockcount=0.0,&transmission.ancestor=Unknown]:0.061759419885396044,30[&blockcount=0.0,&transmission.ancestor=Unknown]:0.06411326463012917)[&blockcount=0.0,&transmission.ancestor=24]:0.01954391024833114)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.02327952248980833,(26[&blockcount=-1,&transmission.ancestor=26]:0.030965912540303116,40[&blockcount=0.0,&transmission.ancestor=26]:0.05670539776095205)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.020640173317562526)[&blockcount=-1,&transmission.ancestor=6]:0.017799838303631424)[&blockcount=0.0,&transmission.ancestor=6]:0.009409161656299939)[&blockcount=0.0,&transmission.ancestor=6]:0.009870109889430032,6[&blockcount=-1,&transmission.ancestor=6]:0.026415400587411767)[&blockcount=-1,&transmission.ancestor=6]:0.00798514148605542,(((3[&blockcount=-1,&transmission.ancestor=3]:0.02280443237297999,15[&blockcount=0.0,&transmission.ancestor=3]:0.06321209589873902)[&blockcount=0.0,&transmission.ancestor=25]:0.02980467027035343,25[&blockcount=-1,&transmission.ancestor=25]:0.04276232502783611)[&blockcount=0.0,&transmission.ancestor=21]:0.01579906700761893,(5[&blockcount=0.0,&transmission.ancestor=21]:0.06343779706489365,21[&blockcount=-1,&transmission.ancestor=21]:0.024057390442083125)[&blockcount=-1,&transmission.ancestor=21]:0.012354435578708828)[&blockcount=0.0,&transmission.ancestor=6]:0.02832885141062666)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.007496276972067499,((((4[&blockcount=-1,&transmission.ancestor=4]:0.02295003697384007,17[&blockcount=0.0,&transmission.ancestor=4]:0.08476122715523728)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.013338973805187745,12[&blockcount=0.0,&transmission.ancestor=Unknown]:0.05831816533519969)[&blockcount=0.0,&transmission.ancestor=10]:0.02130782502461066,10[&blockcount=-1,&transmission.ancestor=10]:0.025970416434377783)[&blockcount=0.0,&transmission.ancestor=7]:0.025621130812035407,7[&blockcount=-1,&transmission.ancestor=7]:0.033633644393945436)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.016187532664291092)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.051065430310212635,9[&blockcount=0.0,&transmission.ancestor=Unknown]:0.1460264105892333)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.07698836415885078,(2[&blockcount=-1,&transmission.ancestor=2]:0.013665007996919045,((8[&blockcount=-1,&transmission.ancestor=8]:0.014005258573390016,(14[&blockcount=0.0,&transmission.ancestor=18]:0.05588746324430632,18[&blockcount=-1,&transmission.ancestor=18]:0.03305465408656196)[&blockcount=0.0,&transmission.ancestor=8]:0.021377917552745845)[&blockcount=0.0,&transmission.ancestor=11]:0.007996762276675536,(11[&blockcount=-1,&transmission.ancestor=11]:0.0189331766807905,(16[&blockcount=-1,&transmission.ancestor=16]:0.03334836094253435,(19[&blockcount=-1,&transmission.ancestor=19]:0.03690376034019629,20[&blockcount=0.0,&transmission.ancestor=19]:0.05630581635286829)[&blockcount=0.0,&transmission.ancestor=16]:0.020752233912662853)[&blockcount=0.0,&transmission.ancestor=11]:0.0212927590198027)[&blockcount=-1,&transmission.ancestor=11]:0.012683138575992781)[&blockcount=0.0,&transmission.ancestor=2]:0.00822167407425104)[&blockcount=0.0,&transmission.ancestor=Unknown]:0.17407479637001208)[&blockcount=-1,&transmission.ancestor=Unknown]:0.0;
+End;

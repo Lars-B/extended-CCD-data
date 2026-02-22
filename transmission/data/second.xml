@@ -135,7 +135,7 @@ name="alignment">
                 <prior id="TransmissionPopSizePrior.t:filtered" name="distribution" x="@transmissionPopSize.t:filtered">
                     <Normal id="Normal.2" name="distr">
                         <parameter id="RealParameter.59" spec="parameter.RealParameter" estimate="false" name="mean">0.0384</parameter>
-                        <parameter id="RealParameter.60" spec="parameter.RealParameter" estimate="false" name="sigma">0.04</parameter>
+                        <parameter id="RealParameter.60" spec="parameter.RealParameter" estimate="false" name="sigma">0.01</parameter>
                     </Normal>
                 </prior>
             </distribution>
