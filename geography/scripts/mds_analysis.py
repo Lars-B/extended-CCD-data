@@ -82,7 +82,7 @@ def pairwise_distances_parallel(trees, dist, ncores=None):
 def mds_stuff():
     np.random.seed(42)
 
-    tree_file = "testing_subsampling.trees"
+    tree_file = "../data/testing_subsampling.trees"
     trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
     print(len(trees))
 
@@ -92,10 +92,10 @@ def mds_stuff():
     logging.info("Adding summary trees")
 
     extra_trees = (
-        ("combined_chains_mcc.typed.node.tree", "MCC"),
-        ("ann_ext_ccd.tree", "ann-CCD"),
-        ("reg_ccd0.tree", "CCD0"),
-        ("reg_ccd1.tree", "CCD1"),
+        ("../data/combined_chains_mcc.typed.node.tree", "MCC"),
+        ("../data/ann_ext_ccd.tree", "ext-CCD"),
+        ("../data/reg_ccd0.tree", "CCD0"),
+        ("../data/reg_ccd1.tree", "CCD1"),
     )
 
     for cur_file, label in extra_trees:
@@ -141,7 +141,7 @@ def mds_stuff():
     style = {
         "posterior": dict(s=30, marker="o", alpha=0.6, color="black"),
         "MCC": dict(s=60, marker="v", color="purple"),
-        "ann-CCD": dict(s=60, marker="v", color="orange"),
+        "ext-CCD": dict(s=60, marker="v", color="orange"),
         "CCD0": dict(s=60, marker="v", color="red"),
         "CCD1": dict(s=60, marker="v", color="green"),
     }
@@ -153,14 +153,14 @@ def mds_stuff():
         rf_coords[post_idx, 1],
         **style["posterior"]
     )
-    ax[0].set_title("RF coordinates")
+    ax[0].set_title("RF coordinates", fontsize=18)
 
     ax[1].scatter(
         erf_coords[post_idx, 0],
         erf_coords[post_idx, 1],
         **style["posterior"]
     )
-    ax[1].set_title("Extended RF coordinates")
+    ax[1].set_title("Extended RF coordinates", fontsize=18)
 
     legend_offset = 4
 
@@ -201,10 +201,18 @@ def mds_stuff():
 
     for a in ax:
         a.set_aspect("equal", adjustable="box")
+        a.tick_params(
+            axis='both',          
+            which='both',      
+            bottom=False,
+            left=False,      
+            labelbottom=False,
+            labelleft=False
+        )
 
-    plt.tight_layout()
+    fig.tight_layout()
     # plt.show()
-    plt.savefig("mds_initial.pdf")
+    plt.savefig("../plots/mds_initial.pdf", bbox_inches='tight')
 
 
 def distance_matrix_summary_trees():
@@ -323,7 +331,6 @@ if __name__ == '__main__':
     #     nsamples=100
     # )
 
-    # todo make a distribution overview of the pwd matrices for the data
-    # mds_stuff()
+    mds_stuff()
     # distance_matrix_summary_trees()
-    pwd_distribution()
+    # pwd_distribution()
