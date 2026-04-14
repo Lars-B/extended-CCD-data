@@ -1,4 +1,5 @@
 import logging
+import random
 from itertools import combinations
 from multiprocessing import Pool, cpu_count
 
@@ -81,12 +82,31 @@ def pairwise_distances_parallel(trees, dist, ncores=None):
 
 def mds_stuff():
     np.random.seed(42)
+    random.seed(42)
+
+    # todo use the new sample_trees_from_geo_ccd() to add ccd samples to the MDS plot in a different color...
 
     tree_file = "../data/testing_subsampling.trees"
     trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
     print(len(trees))
 
     labels = ["posterior"] * len(trees)
+
+    # Adding CCD sample
+    logging.info("Adding CCD sample")
+
+    from brokilon.ccd.domain.phylogeography import get_geo_map
+    geo_ccd_map, branch_lengths_map, clade_count_map = (
+        get_geo_map(trees, geo_ann_str="type", ccd_type=1)
+    )
+
+    from brokilon.ccd.domain.phylogeography import sample_trees_from_geo_ccd
+    ccd_sample = sample_trees_from_geo_ccd(len(trees), geo_ccd_map, "type", clade_count_map)
+
+    ccd_labels = ["ccd-sample"] * len(trees)
+
+    trees.extend(ccd_sample)
+    labels.extend(ccd_labels)
 
     # adding special trees
     logging.info("Adding summary trees")
@@ -140,6 +160,7 @@ def mds_stuff():
 
     style = {
         "posterior": dict(s=30, marker="o", alpha=0.6, color="black"),
+        "ccd-sample": dict(s=30, marker="P", alpha=0.6, color="blue"),
         "MCC": dict(s=60, marker="v", color="purple"),
         "ext-CCD": dict(s=60, marker="v", color="orange"),
         "CCD0": dict(s=60, marker="v", color="red"),
@@ -147,6 +168,7 @@ def mds_stuff():
     }
 
     post_idx = [i for i, l in enumerate(labels) if l == "posterior"]
+    ccd_idx = [i for i, l in enumerate(labels) if l == "ccd-sample"]
 
     ax[0].scatter(
         rf_coords[post_idx, 0],
@@ -162,10 +184,22 @@ def mds_stuff():
     )
     ax[1].set_title("Extended RF coordinates", fontsize=18)
 
+    # Adding CCD sampled points
+    ax[0].scatter(
+        rf_coords[ccd_idx, 0],
+        rf_coords[ccd_idx, 1],
+        **style["ccd-sample"]
+    )
+    ax[1].scatter(
+        erf_coords[ccd_idx, 0],
+        erf_coords[ccd_idx, 1],
+        **style["ccd-sample"]
+    )
+
     legend_offset = 4
 
     for i, label in enumerate(labels):
-        if label == "posterior":
+        if label in ("posterior", "ccd-sample"):
             continue
 
         ax[0].scatter(
