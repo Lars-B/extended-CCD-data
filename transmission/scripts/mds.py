@@ -13,7 +13,7 @@ if __name__ == "__main__":
         subsample_beast_tree_file(
             posterior_file,
             subsample_file,
-            nsamples=250,
+            nsamples=750,
         )
 
     from brokilon.ccd import read_breath_nexus
@@ -42,7 +42,8 @@ if __name__ == "__main__":
     all_trees = subsample + ccd_sample
 
     extra_tree = (
-        ("../data/paper_run/eCCD.10b.tree", "ext-CCD"),
+        ("../data/paper_run/eCCD.10b.tree", "ext-CCD1"),
+        ("../data/paper_run/ccd0.10b.tree", "CCD0"),
         ("../data/paper_run/mcc.10b.tree", "MCC"),
     )
 
@@ -54,14 +55,26 @@ if __name__ == "__main__":
         all_trees.append(cur_tree[0])
         labels.append(label)
 
-    from brokilon.metrics import robinson_foulds
-    pwd_rf = pairwise_distances_parallel(all_trees, dist=robinson_foulds, ncores=3)
+    import numpy as np
+    # RF distances
+    rf_file = "pwd_rf.npy"
+    if os.path.exists(rf_file):
+        pwd_rf = np.load(rf_file)
+    else:
+        from brokilon.metrics import robinson_foulds
+        pwd_rf = pairwise_distances_parallel(all_trees, dist=robinson_foulds, ncores=3)
+        np.save(rf_file, pwd_rf)
 
-    # e RF distances
-    from brokilon.metrics import deme_robinson_foulds
-    from functools import partial
-    deme_rf = partial(deme_robinson_foulds, annotation_str="blockcount")
-    pwd_extended_rf = pairwise_distances_parallel(all_trees, dist=deme_rf, ncores=3)
+    # eRF distances
+    erf_file = "pwd_erf.npy"
+    if os.path.exists(erf_file):
+        pwd_extended_rf = np.load(erf_file)
+    else:
+        from brokilon.metrics import deme_robinson_foulds
+        from functools import partial
+        deme_rf = partial(deme_robinson_foulds, annotation_str="blockcount")
+        pwd_extended_rf = pairwise_distances_parallel(all_trees, dist=deme_rf, ncores=3)
+        np.save(erf_file, pwd_extended_rf)
 
     from sklearn.manifold import MDS
 
@@ -82,10 +95,11 @@ if __name__ == "__main__":
     )
 
     style = {
-        "posterior": dict(s=30, marker="o", alpha=0.6, color="black"),
-        "ccd-sample": dict(s=30, marker="P", alpha=0.6, color="blue"),
-        "MCC": dict(s=60, marker="v", color="purple"),
-        "ext-CCD": dict(s=60, marker="v", color="orange"),
+        "posterior": dict(s=20, marker="o", alpha=0.4, color="black"),
+        "ccd-sample": dict(s=20, marker="P", alpha=0.4, color="blue"),
+        "CCD0": dict(s=60, marker="v", color="purple"),
+        "ext-CCD1": dict(s=60, marker="v", color="orange"),
+        "MCC": dict(s=60, marker="v", color="green"),
         # "CCD0": dict(s=60, marker="v", color="red"),
         # "CCD1": dict(s=60, marker="v", color="green"),
     }
@@ -121,6 +135,9 @@ if __name__ == "__main__":
 
     legend_offset = 4
 
+    texts_rf = []
+    texts_erf = []
+
     for i, label in enumerate(labels):
         if label in ("posterior", "ccd-sample"):
             continue
@@ -137,24 +154,54 @@ if __name__ == "__main__":
             **style[label]
         )
 
-        # optional: annotate
-        ax[0].text(
-            rf_coords[i, 0],
-            rf_coords[i, 1] + legend_offset,
-            label,
-            fontsize=9,
-            ha="center",
-            va="bottom",
+        import matplotlib.patheffects as pe
+
+        texts_rf.append(
+            ax[0].text(
+                rf_coords[i, 0],
+                rf_coords[i, 1],
+                label,
+                fontsize=9,
+                ha="center",
+                va="bottom",
+                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+            )
         )
 
-        ax[1].text(
-            erf_coords[i, 0],
-            erf_coords[i, 1] + legend_offset,
-            label,
-            fontsize=9,
-            ha="center",
-            va="bottom",
+        texts_erf.append(
+            ax[1].text(
+                erf_coords[i, 0],
+                erf_coords[i, 1],
+                label,
+                fontsize=9,
+                ha="center",
+                va="bottom",
+                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+            )
         )
+
+    from adjustText import adjust_text
+
+    adjust_text(
+        texts_rf,
+        x=rf_coords[:, 0],
+        y=rf_coords[:, 1],
+        ax=ax[0],
+        expand_points=(3, 3),
+        force_points=2.0,
+        force_text=1,
+        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    )
+    adjust_text(
+        texts_erf,
+        x=erf_coords[-5:, 0],
+        y=erf_coords[-5:, 1],
+        ax=ax[1],
+        expand_points=(3, 3),
+        force_points=2.0,
+        force_text=1,
+        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    )
 
     for a in ax:
         a.set_aspect("equal", adjustable="box")
