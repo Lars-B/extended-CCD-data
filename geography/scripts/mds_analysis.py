@@ -1,3 +1,4 @@
+import os
 import logging
 import random
 from itertools import combinations
@@ -84,9 +85,15 @@ def mds_stuff():
     np.random.seed(42)
     random.seed(42)
 
-    # todo use the new sample_trees_from_geo_ccd() to add ccd samples to the MDS plot in a different color...
+    tree_file = "../data/subsample.trees"
 
-    tree_file = "../data/testing_subsampling.trees"
+    if not os.path.exists(tree_file):
+        subsample_beast_tree_file(
+            infile="../data/combined_chains.typed.node.trees",
+            outputfile=tree_file,
+            nsamples=750
+        )
+
     trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
     print(len(trees))
 
@@ -113,7 +120,8 @@ def mds_stuff():
 
     extra_trees = (
         ("../data/combined_chains_mcc.typed.node.tree", "MCC"),
-        ("../data/ann_ext_ccd.tree", "ext-CCD"),
+        ("../data/ext-ccd.noB.tree", "ext-CCD1"),
+        ("../data/ext-ccd.b10.tree", "ext-CCD1-burnin"),
         ("../data/reg_ccd0.tree", "CCD0"),
         ("../data/reg_ccd1.tree", "CCD1"),
     )
@@ -126,16 +134,30 @@ def mds_stuff():
         labels.append(label)
 
     # RF
-    logging.info("Computing RF distances")
-    from brokilon.metrics import robinson_foulds
-    pwd_rf = pairwise_distances_parallel(trees, dist=robinson_foulds)
+    rf_file = "pwd_rf.npy"
+    if os.path.exists(rf_file):
+        logging.info(f"Loading RF distances from {rf_file}")
+        pwd_rf = np.load(rf_file)
+    else:
+        logging.info("Computing RF distances")
+        from brokilon.metrics import robinson_foulds
+        pwd_rf = pairwise_distances_parallel(trees, dist=robinson_foulds)
+        np.save(rf_file, pwd_rf)
+        logging.info(f"Saved RF distances to {rf_file}")
 
     # e RF distances
-    logging.info("Computing extended RF distances")
-    from brokilon.metrics import deme_robinson_foulds
-    from functools import partial
-    deme_rf = partial(deme_robinson_foulds, annotation_str="type")
-    pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
+    erf_file = "pwd_erf.npy"
+    if os.path.exists(erf_file):
+        logging.info(f"Loading ERF distances from {erf_file}")
+        pwd_extended_rf = np.load(erf_file)
+    else:
+        logging.info("Computing extended RF distances")
+        from brokilon.metrics import deme_robinson_foulds
+        from functools import partial
+        deme_rf = partial(deme_robinson_foulds, annotation_str="type")
+        pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
+        np.save(erf_file, pwd_extended_rf)
+        logging.info(f"Saved extended RF distances to {erf_file}")
 
     # MDS coords
     logging.info("Computing MDS coordinates")
@@ -159,10 +181,11 @@ def mds_stuff():
     )
 
     style = {
-        "posterior": dict(s=30, marker="o", alpha=0.6, color="black"),
-        "ccd-sample": dict(s=30, marker="P", alpha=0.6, color="blue"),
+        "posterior": dict(s=20, marker="o", alpha=0.4, color="black"),
+        "ccd-sample": dict(s=20, marker="P", alpha=0.4, color="blue"),
         "MCC": dict(s=60, marker="v", color="purple"),
-        "ext-CCD": dict(s=60, marker="v", color="orange"),
+        "ext-CCD1": dict(s=60, marker="v", color="orange"),
+        "ext-CCD1-burnin": dict(s=60, marker="v", color="orange"),
         "CCD0": dict(s=60, marker="v", color="red"),
         "CCD1": dict(s=60, marker="v", color="green"),
     }
@@ -198,6 +221,9 @@ def mds_stuff():
 
     legend_offset = 4
 
+    texts_rf = []
+    texts_erf = []
+
     for i, label in enumerate(labels):
         if label in ("posterior", "ccd-sample"):
             continue
@@ -214,46 +240,75 @@ def mds_stuff():
             **style[label]
         )
 
-        # optional: annotate
-        ax[0].text(
-            rf_coords[i, 0],
-            rf_coords[i, 1] + legend_offset,
-            label,
-            fontsize=9,
-            ha="center",
-            va="bottom",
+        import matplotlib.patheffects as pe
+        texts_rf.append(
+            ax[0].text(
+                rf_coords[i, 0],
+                rf_coords[i, 1],  # + legend_offset,
+                label,
+                fontsize=9,
+                ha="center",
+                va="bottom",
+                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+            )
         )
 
-        ax[1].text(
-            erf_coords[i, 0],
-            erf_coords[i, 1] + legend_offset,
-            label,
-            fontsize=9,
-            ha="center",
-            va="bottom",
+        texts_erf.append(
+            ax[1].text(
+                erf_coords[i, 0],
+                erf_coords[i, 1],  # + legend_offset,
+                label,
+                fontsize=9,
+                ha="center",
+                va="bottom",
+                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+            )
         )
+
+    from adjustText import adjust_text
+    adjust_text(
+        texts_rf,
+        x=rf_coords[:, 0],
+        y=rf_coords[:, 1],
+        ax=ax[0],
+        expand_points=(3, 3),
+        force_points=2.0,
+        force_text=1,
+        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    )
+    adjust_text(
+        texts_erf,
+        x=erf_coords[-5:, 0],
+        y=erf_coords[-5:, 1],
+        ax=ax[1],
+        expand_points=(3, 3),
+        force_points=2.0,
+        force_text=1,
+        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    )
 
     for a in ax:
         a.set_aspect("equal", adjustable="box")
         a.tick_params(
-            axis='both',          
-            which='both',      
+            axis='both',
+            which='both',
             bottom=False,
-            left=False,      
+            left=False,
             labelbottom=False,
             labelleft=False
         )
 
     fig.tight_layout()
     # plt.show()
-    plt.savefig("../plots/mds_initial.pdf", bbox_inches='tight')
+    plt.savefig("../plots/mds_comparison.pdf", bbox_inches='tight')
 
 
 def distance_matrix_summary_trees():
-    # todo needs implementation etc....
     summary_trees = (
         ("combined_chains_mcc.typed.node.tree", "MCC"),
-        ("ann_ext_ccd.tree", "ann-CCD"),
+        # ("ann_ext_ccd.tree", "ext-CCD"),
+        ("ext-ccd.noB.tree", "ext-CCD1"),
+        ("ext-ccd.b10.tree", "ext-CCD1-burnin"),
         ("reg_ccd0.tree", "CCD0"),
         ("reg_ccd1.tree", "CCD1"),
     )
@@ -261,7 +316,7 @@ def distance_matrix_summary_trees():
     sum_tree_list = {}
 
     for file, label in summary_trees:
-        cur = read_nexus_trees(file, parse_taxon_map=True)
+        cur = read_nexus_trees(f"../data/{file}", parse_taxon_map=True)
         sum_tree_list[label] = cur
 
     from brokilon.metrics import robinson_foulds, deme_robinson_foulds
@@ -290,33 +345,43 @@ def distance_matrix_summary_trees():
 
 
 def pwd_distribution():
-    tree_file = "testing_subsampling.trees"
-    trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
-
-    extra_trees = (
-        ("combined_chains_mcc.typed.node.tree", "MCC"),
-        ("ann_ext_ccd.tree", "ann-CCD"),
-        ("reg_ccd0.tree", "CCD0"),
-        ("reg_ccd1.tree", "CCD1"),
-    )
-
-    for cur_file, _ in extra_trees:
-        cur_tree, cur_map = read_nexus_trees(cur_file, parse_taxon_map=True)
-        if not cur_map == taxon_map:
-            raise NotImplementedError("Maps are different!")
-        trees.append(cur_tree[0])
-
-    # RF
-    logging.info("Computing RF distances")
-    from brokilon.metrics import robinson_foulds
-    pwd_rf = pairwise_distances_parallel(trees, dist=robinson_foulds)
-
-    # e RF distances
-    logging.info("Computing extended RF distances")
-    from brokilon.metrics import deme_robinson_foulds
-    from functools import partial
-    deme_rf = partial(deme_robinson_foulds, annotation_str="type")
-    pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
+    # tree_file = "subsample.trees"
+    # if not os.path.exists(tree_file):
+    #     raise FileNotFoundError("Need to compute subsample tree file first.")
+    # trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
+    #
+    # extra_trees = (
+    #     ("ext-ccd.noB.tree", "ext-CCD1"),
+    #     ("ext-ccd.10b.tree", "ext-CCD1-burnin"),
+    #     ("reg_ccd0.tree", "CCD0"),
+    #     ("reg_ccd1.tree", "CCD1"),
+    # )
+    #
+    # for cur_file, _ in extra_trees:
+    #     cur_tree, cur_map = read_nexus_trees(cur_file, parse_taxon_map=True)
+    #     if not cur_map == taxon_map:
+    #         raise NotImplementedError("Maps are different!")
+    #     trees.append(cur_tree[0])
+    #
+    # # RF
+    # logging.info("Computing RF distances")
+    # from brokilon.metrics import robinson_foulds
+    # pwd_rf = pairwise_distances_parallel(trees, dist=robinson_foulds)
+    #
+    # # e RF distances
+    # logging.info("Computing extended RF distances")
+    # from brokilon.metrics import deme_robinson_foulds
+    # from functools import partial
+    # deme_rf = partial(deme_robinson_foulds, annotation_str="type")
+    # pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
+    rf_file = "pwd_rf.npy"
+    if not os.path.exists(rf_file):
+        raise ValueError("Run mds plot before this to compute and save pwd matrix.")
+    pwd_rf = np.load(rf_file)
+    erf_file = "pwd_erf.npy"
+    if not os.path.exists(erf_file):
+        raise ValueError("Run mds plot before this to compute and save pwd matrix.")
+    pwd_extended_rf = np.load(erf_file)
 
     import matplotlib.pyplot as plt
 
@@ -355,16 +420,10 @@ def pwd_distribution():
     plt.legend(fontsize=20)
     plt.tight_layout()
     # plt.show()
-    plt.savefig("distance_distribution.pdf")
+    plt.savefig("../plots/distance_distribution.pdf")
 
 
 if __name__ == '__main__':
-    # subsample_beast_tree_file(
-    #     infile="combined_chains.typed.node.trees",
-    #     outputfile="testing_subsampling.trees",
-    #     nsamples=100
-    # )
-
     mds_stuff()
     # distance_matrix_summary_trees()
-    # pwd_distribution()
+    pwd_distribution()
