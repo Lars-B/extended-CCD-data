@@ -103,7 +103,7 @@ def mds_stuff():
     logging.info("Adding CCD sample")
 
     from brokilon.ccd.domain.phylogeography import get_geo_map
-    geo_ccd_map, branch_lengths_map, clade_count_map = (
+    geo_ccd_map, _, clade_count_map = (
         get_geo_map(trees, geo_ann_str="type", ccd_type=1)
     )
 
@@ -121,7 +121,6 @@ def mds_stuff():
     extra_trees = (
         ("../data/combined_chains_mcc.typed.node.tree", "MCC"),
         ("../data/ext-ccd.noB.tree", "ext-CCD1"),
-        ("../data/ext-ccd.b10.tree", "ext-CCD1-burnin"),
         ("../data/reg_ccd0.tree", "CCD0"),
         ("../data/reg_ccd1.tree", "CCD1"),
     )

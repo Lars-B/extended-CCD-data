@@ -78,7 +78,7 @@ mcc.noB.tree <- read.beast(mcc.noB.file)
 
 # plot_two_trees_with_legend(mcc.noB.tree, mcc.10.tree, "MCC no burnin", "MCC 10% burnin")
 
-mcc.eccd.noB <- plot_two_trees_with_legend(mcc.tree, eccd.noB.tree, "MCC", "eCCD no burnin")
+mcc.eccd.noB <- plot_two_trees_with_legend(mcc.tree, eccd.noB.tree, "MCC", "extended CCD-MAP")
 ggsave(filename="mcc_eccd-noB_comparison.pdf", plot=mcc.eccd.noB, width=10, height=6)
 mcc.eccd.10 <- plot_two_trees_with_legend(mcc.tree, eccd.10.tree, "MCC", "eCCD 10% burnin")
 ggsave(filename="mcc_eccd-10B_comparison.pdf", plot=mcc.eccd.10, width=10, height=6)
