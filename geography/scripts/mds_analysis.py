@@ -123,6 +123,7 @@ def mds_stuff():
         ("../data/ext-ccd.noB.tree", "ext-CCD1"),
         ("../data/reg_ccd0.tree", "CCD0"),
         ("../data/reg_ccd1.tree", "CCD1"),
+        ("../data/combined.hipstr.0.tree", "HIPSTR"),
     )
 
     for cur_file, label in extra_trees:
@@ -180,13 +181,14 @@ def mds_stuff():
     )
 
     style = {
-        "posterior": dict(s=20, marker="o", alpha=0.4, color="black"),
-        "ccd-sample": dict(s=20, marker="P", alpha=0.4, color="blue"),
-        "MCC": dict(s=60, marker="v", color="purple"),
-        "ext-CCD1": dict(s=60, marker="v", color="orange"),
-        "ext-CCD1-burnin": dict(s=60, marker="v", color="orange"),
-        "CCD0": dict(s=60, marker="v", color="red"),
-        "CCD1": dict(s=60, marker="v", color="green"),
+        "posterior":         dict(s=20, marker="o", alpha=0.4, color="black"),
+        "ccd-sample":        dict(s=20, marker="P", alpha=0.4, color="#0072B2"),  # blue
+        "MCC":               dict(s=60, marker="v", color="#CC79A7"),  # pink/purple
+        "ext-CCD1":          dict(s=60, marker="v", color="#E69F00"),  # orange
+        "ext-CCD1-burnin":   dict(s=60, marker="v", color="#D55E00"),  # vermillion (darker orange-red)
+        "CCD0":              dict(s=60, marker="v", color="#009E73"),  # bluish green
+        "CCD1":              dict(s=60, marker="v", color="#F0E442"),  # yellow
+        "HIPSTR":            dict(s=60, marker="v", color="#56B4E9"),  # sky blue
     }
 
     post_idx = [i for i, l in enumerate(labels) if l == "posterior"]
@@ -306,6 +308,7 @@ def distance_matrix_summary_trees():
     summary_trees = (
         ("combined_chains_mcc.typed.node.tree", "MCC"),
         # ("ann_ext_ccd.tree", "ext-CCD"),
+        ("combined.hipstr.0.tree", "HIPSTR"),
         ("ext-ccd.noB.tree", "ext-CCD1"),
         ("ext-ccd.b10.tree", "ext-CCD1-burnin"),
         ("reg_ccd0.tree", "CCD0"),
@@ -344,35 +347,6 @@ def distance_matrix_summary_trees():
 
 
 def pwd_distribution():
-    # tree_file = "subsample.trees"
-    # if not os.path.exists(tree_file):
-    #     raise FileNotFoundError("Need to compute subsample tree file first.")
-    # trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
-    #
-    # extra_trees = (
-    #     ("ext-ccd.noB.tree", "ext-CCD1"),
-    #     ("ext-ccd.10b.tree", "ext-CCD1-burnin"),
-    #     ("reg_ccd0.tree", "CCD0"),
-    #     ("reg_ccd1.tree", "CCD1"),
-    # )
-    #
-    # for cur_file, _ in extra_trees:
-    #     cur_tree, cur_map = read_nexus_trees(cur_file, parse_taxon_map=True)
-    #     if not cur_map == taxon_map:
-    #         raise NotImplementedError("Maps are different!")
-    #     trees.append(cur_tree[0])
-    #
-    # # RF
-    # logging.info("Computing RF distances")
-    # from brokilon.metrics import robinson_foulds
-    # pwd_rf = pairwise_distances_parallel(trees, dist=robinson_foulds)
-    #
-    # # e RF distances
-    # logging.info("Computing extended RF distances")
-    # from brokilon.metrics import deme_robinson_foulds
-    # from functools import partial
-    # deme_rf = partial(deme_robinson_foulds, annotation_str="type")
-    # pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
     rf_file = "pwd_rf.npy"
     if not os.path.exists(rf_file):
         raise ValueError("Run mds plot before this to compute and save pwd matrix.")
@@ -385,44 +359,41 @@ def pwd_distribution():
     import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots(1, 1, figsize=(10, 5), sharey=True, sharex=True)
-    # ax = plt.figure()
 
-    ax.hist(
-        np.triu(pwd_rf, k=1).flatten(),
-        bins=250,
-        alpha=0.5,
-        label="RF distances",
-        density=True,
-        color="blue",
-    )
-    ax.hist(
-        np.triu(pwd_extended_rf, k=1).flatten(),
-        bins=250,
-        alpha=0.5,
-        label="ext-RF distances",
-        density=True,
-        color="red"
-    )
+    n = pwd_rf.shape[0]
+    iu = np.triu_indices(n, k=1)
 
-    plt.xlim([180, 250])
-    plt.ylim([0, 0.08])
+    rf_vals = pwd_rf[iu]
+    ext_rf_vals = pwd_extended_rf[iu]
 
-    plt.xlabel("Tree distances", fontsize=25)
-    plt.ylabel("Density", fontsize=25)
+    ax.scatter(rf_vals, ext_rf_vals, alpha=0.3, s=10, color="blue", zorder=2, rasterized=True)
+
+    # lo = min(rf_vals.min(), ext_rf_vals.min())
+    # hi = max(rf_vals.max(), ext_rf_vals.max())
+    # ax.set_xlim(lo, hi)
+    # ax.set_ylim(lo, hi)
+    # ax.set_autoscale_on(False)   # lock limits before adding the infinite line
+
+    ax.axline((0, 0), slope=1, color='red', linestyle='--', alpha=0.5, zorder=0)
+
+    ax.set_xlim(120, 250)
+    ax.set_ylim(120, 250)
+
+    ax.set_xlabel("RF", fontsize=25)
+    ax.set_ylabel("extended RF", fontsize=25)
 
     # plt.rcParams['xtick.labelsize'] = 25
 
     plt.xticks(fontsize=18)
-    # plt.yticks(fontsize=18)
-    plt.yticks([], [])
+    plt.yticks(fontsize=18)
+    # plt.yticks([], [])
 
-    plt.legend(fontsize=20)
     plt.tight_layout()
     # plt.show()
-    plt.savefig("../plots/distance_distribution.pdf")
+    plt.savefig("../plots/distance_distribution.pdf", dpi=300)
 
 
 if __name__ == '__main__':
-    mds_stuff()
+    # mds_stuff()
     # distance_matrix_summary_trees()
     pwd_distribution()
