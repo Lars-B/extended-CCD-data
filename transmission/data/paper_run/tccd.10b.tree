@@ -1,0 +1,94 @@
+#NEXUS
+
+Begin taxa;
+	Dimensions ntax=41;
+		Taxlabels
+			MVs_NewMexico.USA_38.21
+			MVs_Virginia.USA_35.21
+			MVs_Virginia.USA_35.21_4
+			MVs_Virginia.USA_35.21_5
+			MVs_Virginia.USA_35.21_6
+			MVs_Virginia.USA_36.21
+			MVs_Virginia.USA_36.21_2
+			MVs_Virginia.USA_36.21_3
+			MVs_Virginia.USA_36.21_4
+			MVs_Virginia.USA_37.21
+			MVs_Virginia.USA_37.21_2
+			MVs_Virginia.USA_38.21
+			MVs_Virginia.USA_39.21
+			MVs_Virginia.USA_39.21_2
+			MVs_Virginia.USA_39.21_3
+			MVs_Virginia.USA_39.21_4
+			MVs_Virginia.USA_40.21
+			MVs_Virginia.USA_40.21_2
+			MVs_Virginia.USA_40.21_3
+			MVs_Virginia.USA_41.21
+			MVs_Wisconsin.USA_35.21
+			MVs_Wisconsin.USA_37.21
+			MVs_Wisconsin.USA_37.21_2
+			MVs_Wisconsin.USA_37.21_3
+			MVs_Wisconsin.USA_37.21_4
+			MVs_Wisconsin.USA_37.21_5
+			MVs_Wisconsin.USA_38.21
+			MVs_Wisconsin.USA_39.21
+			MVs_Wisconsin.USA_39.21_10
+			MVs_Wisconsin.USA_39.21_11
+			MVs_Wisconsin.USA_39.21_12
+			MVs_Wisconsin.USA_39.21_13
+			MVs_Wisconsin.USA_39.21_14
+			MVs_Wisconsin.USA_39.21_15
+			MVs_Wisconsin.USA_39.21_2
+			MVs_Wisconsin.USA_39.21_3
+			MVs_Wisconsin.USA_39.21_4
+			MVs_Wisconsin.USA_39.21_5
+			MVs_Wisconsin.USA_39.21_6
+			MVs_Wisconsin.USA_39.21_7
+			MVs_Wisconsin.USA_39.21_8_1
+			;
+End;
+Begin trees;
+	Translate
+		     1 MVs_NewMexico.USA_38.21,
+		     2 MVs_Virginia.USA_35.21,
+		     3 MVs_Virginia.USA_35.21_4,
+		     4 MVs_Virginia.USA_35.21_5,
+		     5 MVs_Virginia.USA_35.21_6,
+		     6 MVs_Virginia.USA_36.21,
+		     7 MVs_Virginia.USA_36.21_2,
+		     8 MVs_Virginia.USA_36.21_3,
+		     9 MVs_Virginia.USA_36.21_4,
+		    10 MVs_Virginia.USA_37.21,
+		    11 MVs_Virginia.USA_37.21_2,
+		    12 MVs_Virginia.USA_38.21,
+		    13 MVs_Virginia.USA_39.21,
+		    14 MVs_Virginia.USA_39.21_2,
+		    15 MVs_Virginia.USA_39.21_3,
+		    16 MVs_Virginia.USA_39.21_4,
+		    17 MVs_Virginia.USA_40.21,
+		    18 MVs_Virginia.USA_40.21_2,
+		    19 MVs_Virginia.USA_40.21_3,
+		    20 MVs_Virginia.USA_41.21,
+		    21 MVs_Wisconsin.USA_35.21,
+		    22 MVs_Wisconsin.USA_37.21,
+		    23 MVs_Wisconsin.USA_37.21_2,
+		    24 MVs_Wisconsin.USA_37.21_3,
+		    25 MVs_Wisconsin.USA_37.21_4,
+		    26 MVs_Wisconsin.USA_37.21_5,
+		    27 MVs_Wisconsin.USA_38.21,
+		    28 MVs_Wisconsin.USA_39.21,
+		    29 MVs_Wisconsin.USA_39.21_10,
+		    30 MVs_Wisconsin.USA_39.21_11,
+		    31 MVs_Wisconsin.USA_39.21_12,
+		    32 MVs_Wisconsin.USA_39.21_13,
+		    33 MVs_Wisconsin.USA_39.21_14,
+		    34 MVs_Wisconsin.USA_39.21_15,
+		    35 MVs_Wisconsin.USA_39.21_2,
+		    36 MVs_Wisconsin.USA_39.21_3,
+		    37 MVs_Wisconsin.USA_39.21_4,
+		    38 MVs_Wisconsin.USA_39.21_5,
+		    39 MVs_Wisconsin.USA_39.21_6,
+		    40 MVs_Wisconsin.USA_39.21_7,
+		    41 MVs_Wisconsin.USA_39.21_8_1
+;
+tree tCCD_MAP = (((((((((1[&blockcount=-1]:0.0173782,35[&blockcount=0]:0.0513286)[&blockcount=-1]:0.00995351,34[&blockcount=0]:0.0528492)[&blockcount=0]:0.0297208,((22[&blockcount=-1]:0.017023,41[&blockcount=0]:0.0477772)[&blockcount=0]:0.0292254,(27[&blockcount=0]:0.05051,36[&blockcount=0]:0.0516573)[&blockcount=0]:0.0195949)[&blockcount=-1]:0.00586042)[&blockcount=-1]:0.00889124,(29[&blockcount=0]:0.0508904,(32[&blockcount=0]:0.0501619,33[&blockcount=0]:0.051564)[&blockcount=0]:0.0222071)[&blockcount=0]:0.0125071)[&blockcount=0]:0.0196389,((((13[&blockcount=0]:0.0568133,31[&blockcount=0]:0.0534236)[&blockcount=0]:0.023368,(38[&blockcount=0]:0.0505014,40[&blockcount=0]:0.0523909)[&blockcount=0]:0.0208687)[&blockcount=0]:0.0190792,(26[&blockcount=-1]:0.019658,(37[&blockcount=0]:0.0521162,39[&blockcount=0]:0.0512899)[&blockcount=0]:0.018986)[&blockcount=0]:0.0230405)[&blockcount=0]:0.0163832,((23[&blockcount=-1]:0.018564,(28[&blockcount=0]:0.0526298,30[&blockcount=0]:0.0551598)[&blockcount=0]:0.0199058)[&blockcount=0]:0.0267397,24[&blockcount=0]:0.049471)[&blockcount=-1]:0.0111006)[&blockcount=0]:0.01457)[&blockcount=0]:0.0136627,((((3[&blockcount=-1]:0.0170018,(12[&blockcount=-1]:0.0202362,17[&blockcount=0]:0.0555824)[&blockcount=0]:0.0335611)[&blockcount=0]:0.0326539,6[&blockcount=-1]:0.02288)[&blockcount=-1]:0.0110695,10[&blockcount=0]:0.0426114)[&blockcount=0]:0.0119986,(21[&blockcount=-1]:0.0188087,25[&blockcount=0]:0.0499544)[&blockcount=-1]:0.00954597)[&blockcount=-1]:0.0183946)[&blockcount=0]:0.0148287,(((4[&blockcount=-1]:0.0149132,15[&blockcount=0]:0.0570326)[&blockcount=0]:0.0390289,5[&blockcount=0]:0.0584323)[&blockcount=0]:0.0213869,7[&blockcount=-1]:0.0231355)[&blockcount=0]:0.0264052)[&blockcount=1]:0.0740791,9[&blockcount=3]:0.179167)[&blockcount=4]:0.160429,((2[&blockcount=-1]:0.0161569,(11[&blockcount=-1]:0.0156177,(14[&blockcount=0]:0.0491986,16[&blockcount=-1]:0.021799)[&blockcount=0]:0.0289786)[&blockcount=0]:0.0305621)[&blockcount=0]:0.0296825,(8[&blockcount=-1]:0.0171536,((18[&blockcount=-1]:0.0237005,20[&blockcount=0]:0.0506787)[&blockcount=0]:0.0341903,19[&blockcount=0]:0.053274)[&blockcount=0]:0.0257419)[&blockcount=0]:0.0374887)[&blockcount=4]:0.272195)[&blockcount=-1]:0;;
+End;
