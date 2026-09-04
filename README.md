@@ -4,6 +4,3 @@ This repository contains datasets that were used as examples in the extented CCD
 
 See the subfolders for specifics and references.
 
-## Reference
-
-WIP
