@@ -247,10 +247,10 @@ def mds_stuff():
                 rf_coords[i, 0],
                 rf_coords[i, 1],  # + legend_offset,
                 label,
-                fontsize=9,
+                fontsize=18,
                 ha="center",
                 va="bottom",
-                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
             )
         )
 
@@ -259,10 +259,10 @@ def mds_stuff():
                 erf_coords[i, 0],
                 erf_coords[i, 1],  # + legend_offset,
                 label,
-                fontsize=9,
+                fontsize=18,
                 ha="center",
                 va="bottom",
-                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
             )
         )
 
@@ -394,6 +394,6 @@ def pwd_distribution():
 
 
 if __name__ == '__main__':
-    # mds_stuff()
+    mds_stuff()
     # distance_matrix_summary_trees()
-    pwd_distribution()
+    # pwd_distribution()
