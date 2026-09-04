@@ -6,7 +6,7 @@ if __name__ == "__main__":
     sys.path.append("../../geography/scripts")
     from mds_analysis import subsample_beast_tree_file, pairwise_distances_parallel
 
-    posterior_file = "../data/paper_run/second-filtered.trees"
+    posterior_file = "../data/paper_run/measles-filtered.trees"
     subsample_file = "../data/paper_run/subsampled.trees"
 
     if not os.path.exists(subsample_file):
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     all_trees = subsample + ccd_sample
 
     extra_tree = (
-        ("../data/paper_run/eCCD.10b.tree", "ext-CCD1"),
+        ("../data/paper_run/tCCD.10b.tree", "ext-CCD1"),
         ("../data/paper_run/ccd0.10b.tree", "CCD0"),
         ("../data/paper_run/mcc.10b.tree", "MCC"),
     )
@@ -161,10 +161,10 @@ if __name__ == "__main__":
                 rf_coords[i, 0],
                 rf_coords[i, 1],
                 label,
-                fontsize=9,
+                fontsize=18,
                 ha="center",
                 va="bottom",
-                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
             )
         )
 
@@ -173,10 +173,10 @@ if __name__ == "__main__":
                 erf_coords[i, 0],
                 erf_coords[i, 1],
                 label,
-                fontsize=9,
+                fontsize=18,
                 ha="center",
                 va="bottom",
-                path_effects=[pe.withStroke(linewidth=2, foreground="white")],
+                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
             )
         )
 

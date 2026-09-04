@@ -1,5 +1,191 @@
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="355">
-        <text x="10" y="20" font-size="12" font-weight="bold" fill="black">Node Shapes:</text><rect x="20" y="33" width="15" height="15" fill="gray"/><text x="50" y="45" font-size="12" font-weight="normal" fill="black">Terminal (in or out)</text><polygon points="27.5,58 20,73 35,73" fill="gray"/><text x="50" y="70" font-size="12" font-weight="normal" fill="black">Isolated</text><ellipse cx="27.5" cy="90.5" rx="7.5" ry="7.5" fill="gray"/><text x="50" y="95" font-size="12" font-weight="normal" fill="black">Regular</text><text x="10" y="120" font-size="12" font-weight="bold" fill="black">Node Colors by base:</text><rect x="20" y="133" width="15" height="15" fill="#1f77b4"/><text x="50" y="145" font-size="12" font-weight="normal" fill="black">A</text><rect x="20" y="158" width="15" height="15" fill="#ff7f0e"/><text x="50" y="170" font-size="12" font-weight="normal" fill="black">B</text><rect x="20" y="183" width="15" height="15" fill="#2ca02c"/><text x="50" y="195" font-size="12" font-weight="normal" fill="black">C</text><rect x="20" y="208" width="15" height="15" fill="#d62728"/><text x="50" y="220" font-size="12" font-weight="normal" fill="black">D</text><rect x="20" y="233" width="15" height="15" fill="#9467bd"/><text x="50" y="245" font-size="12" font-weight="normal" fill="black">E</text><text x="10" y="270" font-size="12" font-weight="bold" fill="black">Edge Colors:</text><line x1="20" y1="288" x2="40" y2="288" stroke="#1f77b4" stroke-width="3"/><text x="50" y="295" font-size="12" font-weight="normal" fill="black">Posterior</text><line x1="20" y1="313" x2="40" y2="313" stroke="#ff7f0e" stroke-width="3"/><text x="50" y="320" font-size="12" font-weight="normal" fill="black">tCCD summary</text>
-    </svg>
-    
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="179.70117"
+   height="281.29883"
+   version="1.1"
+   id="svg20"
+   sodipodi:docname="legend.svg"
+   inkscape:version="1.4.3 (0d15f750, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9037736"
+     inkscape:cx="125.80277"
+     inkscape:cy="167.82458"
+     inkscape:window-width="1878"
+     inkscape:window-height="1444"
+     inkscape:window-x="3360"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg20" />
+  <text
+     x="-1.1132812"
+     y="9.1171875"
+     font-size="12px"
+     font-weight="bold"
+     fill="#000000"
+     id="text5">Node Colors by Subcluster:</text>
+  <rect
+     x="8.8867188"
+     y="22.117188"
+     width="15"
+     height="15"
+     fill="#00c7fc"
+     id="rect5" />
+  <text
+     x="38.886719"
+     y="34.117188"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text6">A</text>
+  <rect
+     x="8.8867188"
+     y="47.117188"
+     width="15"
+     height="15"
+     fill="#ef553b"
+     id="rect6" />
+  <text
+     x="38.886719"
+     y="59.117188"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text7">B</text>
+  <rect
+     x="8.8867188"
+     y="72.117188"
+     width="15"
+     height="15"
+     fill="#00cc96"
+     id="rect7" />
+  <text
+     x="38.886719"
+     y="84.117188"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text8">C</text>
+  <rect
+     x="8.8867188"
+     y="97.117188"
+     width="15"
+     height="15"
+     fill="#be38f3"
+     id="rect8" />
+  <text
+     x="38.886719"
+     y="109.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text9">D</text>
+  <rect
+     x="8.8867188"
+     y="122.11719"
+     width="15"
+     height="15"
+     fill="#ffa15a"
+     id="rect9" />
+  <text
+     x="38.886719"
+     y="134.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text10">E</text>
+  <rect
+     x="8.8867188"
+     y="147.11719"
+     width="15"
+     height="15"
+     fill="#d6d6d6"
+     id="rect10" />
+  <text
+     x="38.886719"
+     y="159.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text11">NA</text>
+  <text
+     x="-1.1132812"
+     y="184.11719"
+     font-size="12px"
+     font-weight="bold"
+     fill="#000000"
+     id="text12">Edge Colors:</text>
+  <line
+     x1="8.8867188"
+     y1="202.11719"
+     x2="28.886719"
+     y2="202.11719"
+     stroke="#aaaaaa"
+     stroke-width="3"
+     id="line12" />
+  <text
+     x="38.886719"
+     y="206.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text13">CCD0-tree</text>
+  <line
+     x1="8.8867188"
+     y1="227.11719"
+     x2="28.886719"
+     y2="227.11719"
+     stroke="#606060"
+     stroke-width="3"
+     id="line17" />
+  <text
+     x="38.886719"
+     y="231.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text18">MCC-tree</text>
+  <line
+     x1="8.8867188"
+     y1="252.11719"
+     x2="28.886719"
+     y2="252.11719"
+     stroke="#ff4013"
+     stroke-width="3"
+     id="line18" />
+  <text
+     x="38.886719"
+     y="256.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text19">extended-CCD-tree</text>
+  <line
+     x1="8.8867188"
+     y1="277.11719"
+     x2="28.886719"
+     y2="277.11719"
+     stroke="#00a3d7"
+     stroke-width="3"
+     id="line19" />
+  <text
+     x="38.886719"
+     y="281.11719"
+     font-size="12px"
+     font-weight="normal"
+     fill="#000000"
+     id="text20">Posterior</text>
+</svg>
