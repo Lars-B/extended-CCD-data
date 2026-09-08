@@ -83,7 +83,7 @@ name="alignment">
             <parameter id="blockstart.t:filtered" spec="parameter.RealParameter" dimension="80" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
             <parameter id="blockend.t:filtered" spec="parameter.RealParameter" dimension="80" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
             <stateNode id="blockcount.t:filtered" spec="parameter.IntegerParameter" dimension="81" lower="-1" upper="100000">0</stateNode>
-            <parameter id="transmissionPopSize.t:filtered" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="Infinity">0.05</parameter>
+            <parameter id="transmissionPopSize.t:filtered" spec="parameter.RealParameter" lower="0.0001" name="stateNode" upper="Infinity">0.05</parameter>
             <parameter id="transmissionOrigin.t:filtered" spec="parameter.RealParameter" name="stateNode">3.2</parameter>
         </state>
         <init id="RandomTree.t:filtered" spec="RandomTree" estimate="false" initial="@Tree.t:filtered" taxa="@filtered">
@@ -132,12 +132,12 @@ name="alignment">
                 <prior id="TransmissionOriginPrior.t:filtered" name="distribution" x="@transmissionOrigin.t:filtered">
                     <Uniform id="Uniform.7" name="distr" upper="Infinity"/>
                 </prior>
-                <prior id="TransmissionPopSizePrior.t:filtered" name="distribution" x="@transmissionPopSize.t:filtered">
+                <!-- <prior id="TransmissionPopSizePrior.t:filtered" name="distribution" x="@transmissionPopSize.t:filtered">
                     <Normal id="Normal.2" name="distr">
                         <parameter id="RealParameter.59" spec="parameter.RealParameter" estimate="false" name="mean">0.0384</parameter>
-                        <parameter id="RealParameter.60" spec="parameter.RealParameter" estimate="false" name="sigma">0.01</parameter>
+                        <parameter id="RealParameter.60" spec="parameter.RealParameter" estimate="false" name="sigma">0.007</parameter>
                     </Normal>
-                </prior>
+                </prior> -->
             </distribution>
             <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
                 <distribution id="treeLikelihood.filtered" spec="ThreadedTreeLikelihood" data="@filtered" tree="@Tree.t:filtered">
@@ -206,7 +206,7 @@ name="alignment">
         <operator id="transmissionLikelihoodWilsonBalding.t:filtered" spec="WilsonBalding" tree="@Tree.t:filtered" weight="3.0"/>
         <operator id="transmissionInfectionMover.t:filtered" spec="breath.operator.InfectionMover" blockcount="@blockcount.t:filtered" blockend="@blockend.t:filtered" blockstart="@blockstart.t:filtered" likelihood="@transmissionLikelihood.t:filtered" weight="50.0"/>
         <operator id="transmissionBlockOperator.t:filtered" spec="breath.operator.BlockOperator" blockcount="@blockcount.t:filtered" blockend="@blockend.t:filtered" blockstart="@blockstart.t:filtered" tree="@Tree.t:filtered" weight="50.0"/>
-        <operator id="transmissionPopSizeScaler.t:filtered" spec="kernel.BactrianScaleOperator" parameter="@transmissionPopSize.t:filtered" scaleFactor="0.1" upper="10.0" weight="5.0"/>
+        <!-- <operator id="transmissionPopSizeScaler.t:filtered" spec="kernel.BactrianScaleOperator" parameter="@transmissionPopSize.t:filtered" scaleFactor="0.1" upper="10.0" weight="5.0"/> -->
         <operator id="transmissionOriginScaler.t:filtered" spec="kernel.BactrianScaleOperator" parameter="@transmissionOrigin.t:filtered" scaleFactor="0.1" upper="10.0" weight="0.5"/>
         <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="10000" model="@posterior" sanitiseHeaders="true" sort="smart">
             <log idref="posterior"/>
@@ -225,6 +225,7 @@ name="alignment">
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
+            <log idref="transmissionPopSize.t:filtered"/>
         </logger>
         <logger id="treelog.t:filtered" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="10000" mode="tree">
             <log id="TreeWithMetaDataLogger.t:filtered" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:filtered">

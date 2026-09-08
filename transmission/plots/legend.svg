@@ -22,10 +22,10 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.9037736"
-     inkscape:cx="125.80277"
-     inkscape:cy="167.82458"
-     inkscape:window-width="1878"
-     inkscape:window-height="1444"
+     inkscape:cx="89.033696"
+     inkscape:cy="154.16749"
+     inkscape:window-width="1784"
+     inkscape:window-height="1374"
      inkscape:window-x="3360"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
@@ -42,7 +42,7 @@
      y="22.117188"
      width="15"
      height="15"
-     fill="#00c7fc"
+     fill="#4d22b3"
      id="rect5" />
   <text
      x="38.886719"
@@ -84,7 +84,7 @@
      y="97.117188"
      width="15"
      height="15"
-     fill="#be38f3"
+     fill="#ab63fa"
      id="rect8" />
   <text
      x="38.886719"
@@ -112,7 +112,7 @@
      y="147.11719"
      width="15"
      height="15"
-     fill="#d6d6d6"
+     fill="#19d3f3"
      id="rect10" />
   <text
      x="38.886719"
@@ -133,7 +133,7 @@
      y1="202.11719"
      x2="28.886719"
      y2="202.11719"
-     stroke="#aaaaaa"
+     stroke="#7a7a7a"
      stroke-width="3"
      id="line12" />
   <text
@@ -142,50 +142,50 @@
      font-size="12px"
      font-weight="normal"
      fill="#000000"
-     id="text13">CCD0-tree</text>
+     id="text13">CCD0</text>
   <line
      x1="8.8867188"
      y1="227.11719"
      x2="28.886719"
      y2="227.11719"
-     stroke="#606060"
+     stroke="#ff8647"
      stroke-width="3"
-     id="line17" />
+     id="line13" />
   <text
      x="38.886719"
      y="231.11719"
      font-size="12px"
      font-weight="normal"
      fill="#000000"
-     id="text18">MCC-tree</text>
+     id="text14">eCCD</text>
   <line
      x1="8.8867188"
      y1="252.11719"
      x2="28.886719"
      y2="252.11719"
-     stroke="#ff4013"
+     stroke="#c0c0c0"
      stroke-width="3"
-     id="line18" />
+     id="line17" />
   <text
      x="38.886719"
      y="256.11719"
      font-size="12px"
      font-weight="normal"
      fill="#000000"
-     id="text19">extended-CCD-tree</text>
+     id="text18">MCC</text>
   <line
      x1="8.8867188"
      y1="277.11719"
      x2="28.886719"
      y2="277.11719"
-     stroke="#00a3d7"
+     stroke="#19d3f3"
      stroke-width="3"
-     id="line19" />
+     id="line18" />
   <text
      x="38.886719"
      y="281.11719"
      font-size="12px"
      font-weight="normal"
      fill="#000000"
-     id="text20">Posterior</text>
+     id="text19">Posterior</text>
 </svg>
