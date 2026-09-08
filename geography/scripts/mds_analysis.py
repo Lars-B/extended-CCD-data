@@ -166,7 +166,8 @@ def mds_stuff():
     embedding = MDS(
         n_components=2,
         n_init=1,
-        dissimilarity="precomputed"
+        dissimilarity="precomputed",
+        random_state=1337
     )
     rf_coords = embedding.fit_transform(pwd_rf)
 
@@ -183,12 +184,12 @@ def mds_stuff():
     style = {
         "posterior":         dict(s=20, marker="o", alpha=0.4, color="black"),
         "ccd-sample":        dict(s=20, marker="P", alpha=0.4, color="#0072B2"),  # blue
-        "MCC":               dict(s=60, marker="v", color="#CC79A7"),  # pink/purple
-        "ext-CCD1":          dict(s=60, marker="v", color="#E69F00"),  # orange
-        "ext-CCD1-burnin":   dict(s=60, marker="v", color="#D55E00"),  # vermillion (darker orange-red)
-        "CCD0":              dict(s=60, marker="v", color="#009E73"),  # bluish green
-        "CCD1":              dict(s=60, marker="v", color="#F0E442"),  # yellow
-        "HIPSTR":            dict(s=60, marker="v", color="#56B4E9"),  # sky blue
+        "MCC":               dict(s=120, marker="v", color="#CC79A7"),  # pink/purple
+        "ext-CCD1":          dict(s=120, marker="v", color="#E69F00"),  # orange
+        "ext-CCD1-burnin":   dict(s=120, marker="v", color="#D55E00"),  # vermillion (darker orange-red)
+        "CCD0":              dict(s=120, marker="v", color="#009E73"),  # bluish green
+        "CCD1":              dict(s=120, marker="v", color="#F0E442"),  # yellow
+        "HIPSTR":            dict(s=120, marker="v", color="#56B4E9"),  # sky blue
     }
 
     post_idx = [i for i, l in enumerate(labels) if l == "posterior"]
@@ -232,75 +233,52 @@ def mds_stuff():
         ax[0].scatter(
             rf_coords[i, 0],
             rf_coords[i, 1],
-            **style[label]
+            **style[label],
+            label=label,
         )
 
         ax[1].scatter(
             erf_coords[i, 0],
             erf_coords[i, 1],
-            **style[label]
+            **style[label],
+            label=label,
         )
 
-        import matplotlib.patheffects as pe
-        texts_rf.append(
-            ax[0].text(
-                rf_coords[i, 0],
-                rf_coords[i, 1],  # + legend_offset,
-                label,
-                fontsize=18,
-                ha="center",
-                va="bottom",
-                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
-            )
-        )
+    # Get handles/labels from the first axis
+    handles, legend_labels = ax[0].get_legend_handles_labels()
 
-        texts_erf.append(
-            ax[1].text(
-                erf_coords[i, 0],
-                erf_coords[i, 1],  # + legend_offset,
-                label,
-                fontsize=18,
-                ha="center",
-                va="bottom",
-                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
-            )
-        )
+    # Remove duplicate labels while preserving order
+    unique = dict(zip(legend_labels, handles))
 
-    from adjustText import adjust_text
-    adjust_text(
-        texts_rf,
-        x=rf_coords[:, 0],
-        y=rf_coords[:, 1],
-        ax=ax[0],
-        expand_points=(3, 3),
-        force_points=2.0,
-        force_text=1,
-        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    fig.legend(
+        unique.values(),
+        unique.keys(),
+        loc="lower center",
+        ncol=5,
+        fontsize=14,
+        frameon=False,
+        bbox_to_anchor=(0.5, -0.02),
     )
-    adjust_text(
-        texts_erf,
-        x=erf_coords[-5:, 0],
-        y=erf_coords[-5:, 1],
-        ax=ax[1],
-        expand_points=(3, 3),
-        force_points=2.0,
-        force_text=1,
-        # arrowprops=dict(arrowstyle="-", lw=0.5)
-    )
+
+
+    # ---------------------------------------------------------
+    # Axis formatting
+    # ---------------------------------------------------------
 
     for a in ax:
         a.set_aspect("equal", adjustable="box")
         a.tick_params(
-            axis='both',
-            which='both',
+            axis="both",
+            which="both",
             bottom=False,
             left=False,
             labelbottom=False,
-            labelleft=False
+            labelleft=False,
         )
 
-    fig.tight_layout()
-    # plt.show()
+    # Leave room for the shared legend
+    fig.tight_layout(rect=[0, 0.08, 1, 1])
+
     plt.savefig("../plots/mds_comparison.pdf", bbox_inches='tight')
 
 

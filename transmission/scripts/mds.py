@@ -81,7 +81,8 @@ if __name__ == "__main__":
     embedding = MDS(
         n_components=2,
         n_init=1,
-        dissimilarity="precomputed"
+        dissimilarity="precomputed",
+        random_state=1337
     )
     rf_coords = embedding.fit_transform(pwd_rf)
 
@@ -95,49 +96,55 @@ if __name__ == "__main__":
     )
 
     style = {
-        "posterior": dict(s=20, marker="o", alpha=0.4, color="black"),
-        "ccd-sample": dict(s=20, marker="P", alpha=0.4, color="blue"),
-        "CCD0": dict(s=60, marker="v", color="purple"),
-        "ext-CCD1": dict(s=60, marker="v", color="orange"),
-        "MCC": dict(s=60, marker="v", color="green"),
+        "posterior":         dict(s=20, marker="o", alpha=0.4, color="black"),
+        "ccd-sample":        dict(s=20, marker="P", alpha=0.4, color="#0072B2"),
+        "MCC":               dict(s=120, marker="v", color="#CC79A7"),
+        "ext-CCD1":          dict(s=120, marker="v", color="#E69F00"),
+        "CCD0":              dict(s=120, marker="v", color="#009E73"),
+        # "CCD0": dict(s=60, marker="v", color="purple"),
+        # "ext-CCD1": dict(s=60, marker="v", color="orange"),
+        # "MCC": dict(s=60, marker="v", color="green"),
         # "CCD0": dict(s=60, marker="v", color="red"),
         # "CCD1": dict(s=60, marker="v", color="green"),
     }
 
+    
     post_idx = [i for i, l in enumerate(labels) if l == "posterior"]
     ccd_idx = [i for i, l in enumerate(labels) if l == "ccd-sample"]
 
+    # Posterior points
     ax[0].scatter(
         rf_coords[post_idx, 0],
         rf_coords[post_idx, 1],
-        **style["posterior"]
+        **style["posterior"],
+        # label="Posterior",
     )
     ax[0].set_title("RF coordinates", fontsize=18)
 
     ax[1].scatter(
         erf_coords[post_idx, 0],
         erf_coords[post_idx, 1],
-        **style["posterior"]
+        **style["posterior"],
+        # label="Posterior",
     )
     ax[1].set_title("Extended RF coordinates", fontsize=18)
 
-    # Adding CCD sampled points
+    # CCD sampled points
     ax[0].scatter(
         rf_coords[ccd_idx, 0],
         rf_coords[ccd_idx, 1],
-        **style["ccd-sample"]
+        **style["ccd-sample"],
+        # label="CCD sample",
     )
+
     ax[1].scatter(
         erf_coords[ccd_idx, 0],
         erf_coords[ccd_idx, 1],
-        **style["ccd-sample"]
+        **style["ccd-sample"],
+        # label="CCD sample",
     )
 
-    legend_offset = 4
-
-    texts_rf = []
-    texts_erf = []
-
+    # Other points
     for i, label in enumerate(labels):
         if label in ("posterior", "ccd-sample"):
             continue
@@ -145,75 +152,54 @@ if __name__ == "__main__":
         ax[0].scatter(
             rf_coords[i, 0],
             rf_coords[i, 1],
-            **style[label]
+            **style[label],
+            label=label,
         )
 
         ax[1].scatter(
             erf_coords[i, 0],
             erf_coords[i, 1],
-            **style[label]
+            **style[label],
+            label=label,
         )
 
-        import matplotlib.patheffects as pe
 
-        texts_rf.append(
-            ax[0].text(
-                rf_coords[i, 0],
-                rf_coords[i, 1],
-                label,
-                fontsize=18,
-                ha="center",
-                va="bottom",
-                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
-            )
-        )
+    # ---------------------------------------------------------
+    # Shared legend
+    # ---------------------------------------------------------
 
-        texts_erf.append(
-            ax[1].text(
-                erf_coords[i, 0],
-                erf_coords[i, 1],
-                label,
-                fontsize=18,
-                ha="center",
-                va="bottom",
-                path_effects=[pe.withStroke(linewidth=5, foreground="#E6E1D8")],
-            )
-        )
+    # Get handles/labels from the first axis
+    handles, legend_labels = ax[0].get_legend_handles_labels()
 
-    from adjustText import adjust_text
+    # Remove duplicate labels while preserving order
+    unique = dict(zip(legend_labels, handles))
 
-    adjust_text(
-        texts_rf,
-        x=rf_coords[:, 0],
-        y=rf_coords[:, 1],
-        ax=ax[0],
-        expand_points=(3, 3),
-        force_points=2.0,
-        force_text=1,
-        # arrowprops=dict(arrowstyle="-", lw=0.5)
+    fig.legend(
+        unique.values(),
+        unique.keys(),
+        loc="lower center",
+        ncol=4,
+        fontsize=14,
+        frameon=False,
+        bbox_to_anchor=(0.5, -0.02),
     )
-    adjust_text(
-        texts_erf,
-        x=erf_coords[-5:, 0],
-        y=erf_coords[-5:, 1],
-        ax=ax[1],
-        expand_points=(3, 3),
-        force_points=2.0,
-        force_text=1,
-        # arrowprops=dict(arrowstyle="-", lw=0.5)
-    )
+
+
+    # ---------------------------------------------------------
+    # Axis formatting
+    # ---------------------------------------------------------
 
     for a in ax:
         a.set_aspect("equal", adjustable="box")
         a.tick_params(
-            axis='both',
-            which='both',
+            axis="both",
+            which="both",
             bottom=False,
             left=False,
             labelbottom=False,
-            labelleft=False
+            labelleft=False,
         )
 
-    fig.tight_layout()
-    # plt.show()
+    # Leave room for the shared legend
+    fig.tight_layout(rect=[0, 0.08, 1, 1])
     plt.savefig("../plots/mds_comparison.pdf", bbox_inches='tight')
