@@ -2,18 +2,19 @@ import os
 import sys
 
 if __name__ == "__main__":
+    N_SAMPLES = 750
 
     sys.path.append("../../geography/scripts")
     from mds_analysis import subsample_beast_tree_file, pairwise_distances_parallel
 
     posterior_file = "../data/paper_run/measles-filtered.trees"
-    subsample_file = "../data/paper_run/subsampled.trees"
+    subsample_file = f"../data/paper_run/subsampled_{N_SAMPLES}.trees"
 
     if not os.path.exists(subsample_file):
         subsample_beast_tree_file(
             posterior_file,
             subsample_file,
-            nsamples=750,
+            nsamples=N_SAMPLES,
         )
 
     from brokilon.ccd import read_breath_nexus
@@ -72,7 +73,7 @@ if __name__ == "__main__":
     else:
         from brokilon.metrics import deme_robinson_foulds
         from functools import partial
-        deme_rf = partial(deme_robinson_foulds, annotation_str="blockcount")
+        deme_rf = partial(deme_robinson_foulds, annotation_str="transm_ancest")
         pwd_extended_rf = pairwise_distances_parallel(all_trees, dist=deme_rf, ncores=3)
         np.save(erf_file, pwd_extended_rf)
 
