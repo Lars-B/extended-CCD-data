@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     import numpy as np
     # RF distances
-    rf_file = "pwd_rf.npy"
+    rf_file = f"pwd_{N_SAMPLES}_rf.npy"
     if os.path.exists(rf_file):
         pwd_rf = np.load(rf_file)
     else:
@@ -67,13 +67,13 @@ if __name__ == "__main__":
         np.save(rf_file, pwd_rf)
 
     # eRF distances
-    erf_file = "pwd_erf.npy"
+    erf_file = f"pwd_{N_SAMPLES}_erf.npy"
     if os.path.exists(erf_file):
         pwd_extended_rf = np.load(erf_file)
     else:
-        from brokilon.metrics import deme_robinson_foulds
+        from brokilon.metrics import extended_robinson_foulds
         from functools import partial
-        deme_rf = partial(deme_robinson_foulds, annotation_str="transm_ancest")
+        deme_rf = partial(extended_robinson_foulds, kind="transmission")
         pwd_extended_rf = pairwise_distances_parallel(all_trees, dist=deme_rf, ncores=3)
         np.save(erf_file, pwd_extended_rf)
 

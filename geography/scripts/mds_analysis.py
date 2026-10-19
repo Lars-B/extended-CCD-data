@@ -152,9 +152,9 @@ def mds_stuff():
         pwd_extended_rf = np.load(erf_file)
     else:
         logging.info("Computing extended RF distances")
-        from brokilon.metrics import deme_robinson_foulds
+        from brokilon.metrics import extended_robinson_foulds
         from functools import partial
-        deme_rf = partial(deme_robinson_foulds, annotation_str="type")
+        deme_rf = partial(extended_robinson_foulds, kind="deme")
         pwd_extended_rf = pairwise_distances_parallel(trees, dist=deme_rf)
         np.save(erf_file, pwd_extended_rf)
         logging.info(f"Saved extended RF distances to {erf_file}")
@@ -315,7 +315,7 @@ def distance_matrix_summary_trees():
                     annotation_str="type"
                 )
             )
-        from brokilon.metrics.generalized_robinson_foulds import _get_deme_clades
+        from brokilon.metrics.extended_robinson_foulds import _get_deme_clades
         from brokilon.ccd.domain.topology.ccd import get_clades
         cd = _get_deme_clades(sum_tree_list[t][0][0], "type")
         c = get_clades(sum_tree_list[t][0][0])
