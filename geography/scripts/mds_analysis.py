@@ -113,7 +113,7 @@ def mds_stuff():
         )
 
     trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
-    print(len(trees))
+    logging.info(f"Number of trees: {len(trees)} (should == {N_SAMPLES})")
 
     labels = ["posterior"] * N_SAMPLES
 
@@ -203,12 +203,12 @@ def mds_stuff():
     style = {
         "posterior":         dict(s=20, marker="o", alpha=0.4, color="black"),
         "ccd-sample":        dict(s=20, marker="P", alpha=0.4, color="#0072B2"),  # blue
-        "MCC":               dict(s=120, marker="v", color="#CC79A7"),  # pink/purple
+        "MCC":               dict(s=120, marker="s", color="#CC79A7"),  # pink/purple
         "ext-CCD1":          dict(s=120, marker="v", color="#E69F00"),  # orange
-        "ext-CCD1-burnin":   dict(s=120, marker="v", color="#D55E00"),  # vermillion (darker orange-red)
-        "CCD0":              dict(s=120, marker="v", color="#009E73"),  # bluish green
-        "CCD1":              dict(s=120, marker="v", color="#F0E442"),  # yellow
-        "HIPSTR":            dict(s=120, marker="v", color="#56B4E9"),  # sky blue
+        # "ext-CCD1-burnin":   dict(s=120, marker="v", color="#D55E00"),  # vermillion (darker orange-red)
+        "CCD0":              dict(s=120, marker="D", color="#009E73"),  # bluish green
+        "CCD1":              dict(s=120, marker="p", color="#F0E442"),  # yellow
+        "HIPSTR":            dict(s=120, marker="^", color="#56B4E9"),  # sky blue
     }
 
     post_idx = [i for i, l in enumerate(labels) if l == "posterior"]

@@ -118,9 +118,9 @@ if __name__ == "__main__":
     style = {
         "posterior":         dict(s=20, marker="o", alpha=0.4, color="black"),
         "ccd-sample":        dict(s=20, marker="P", alpha=0.4, color="#0072B2"),
-        "MCC":               dict(s=120, marker="v", color="#CC79A7"),
+        "MCC":               dict(s=120, marker="s", color="#CC79A7"),
         "ext-CCD1":          dict(s=120, marker="v", color="#E69F00"),
-        "CCD0":              dict(s=120, marker="v", color="#009E73"),
+        "CCD0":              dict(s=120, marker="D", color="#009E73"),
         # "CCD0": dict(s=60, marker="v", color="purple"),
         # "ext-CCD1": dict(s=60, marker="v", color="orange"),
         # "MCC": dict(s=60, marker="v", color="green"),
