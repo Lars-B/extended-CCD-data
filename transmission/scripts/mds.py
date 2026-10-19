@@ -1,6 +1,9 @@
 import os
 import sys
 import random
+from pathlib import Path
+import zipfile
+
 
 
 if __name__ == "__main__":
@@ -11,17 +14,16 @@ if __name__ == "__main__":
     sys.path.append("../../geography/scripts")
     from mds_analysis import subsample_beast_tree_file, pairwise_distances_parallel
 
-    posterior_file = "../data/paper_run/measles-filtered.trees"
+    posterior_file = Path("../data/paper_run/measles-filtered.trees")
     subsample_file = f"../data/paper_run/subsampled_{N_SAMPLES}.trees"
-
-    from pathlib import Path
-    import zipfile
 
     zip_file = posterior_file.with_suffix(posterior_file.suffix + ".zip")
 
     if not posterior_file.exists() and zip_file.exists():
         with zipfile.ZipFile(zip_file, "r") as z:
-            z.extractall(posterior_file.parent)
+            for member in z.namelist():
+                if not member.startswith("__MACOSX/"):
+                    z.extractall(posterior_file.parent)
 
     if not posterior_file.exists():
         raise FileNotFoundError(f"Tree file not found: {posterior_file}")
