@@ -85,19 +85,37 @@ def mds_stuff():
     np.random.seed(42)
     random.seed(42)
 
-    tree_file = "../data/subsample.trees"
+    N_SAMPLES = 750
+
+    tree_file = f"../data/subsampled_{N_SAMPLES}.trees"
+
+    from pathlib import Path
+    import zipfile
+
+    posterior_file = Path("../data/combined_chains.typed.node.trees")
+
+    zip_file = posterior_file.with_suffix(posterior_file.suffix + ".zip")
+
+    if not posterior_file.exists() and zip_file.exists():
+        with zipfile.ZipFile(zip_file, "r") as z:
+            for member in z.namelist():
+                if not member.startswith("__MACOSX/"):
+                    z.extract(member, posterior_file.parent)
+
+    if not posterior_file.exists():
+        raise FileNotFoundError(f"Tree file not found: {posterior_file}")
 
     if not os.path.exists(tree_file):
         subsample_beast_tree_file(
-            infile="../data/combined_chains.typed.node.trees",
+            infile=posterior_file,
             outputfile=tree_file,
-            nsamples=750
+            nsamples=N_SAMPLES
         )
 
     trees, taxon_map = read_nexus_trees(tree_file, parse_taxon_map=True)
     print(len(trees))
 
-    labels = ["posterior"] * len(trees)
+    labels = ["posterior"] * N_SAMPLES
 
     # Adding CCD sample
     logging.info("Adding CCD sample")
@@ -108,7 +126,7 @@ def mds_stuff():
     )
 
     from brokilon.ccd.domain.phylogeography import sample_trees_from_geo_ccd
-    ccd_sample = sample_trees_from_geo_ccd(len(trees), geo_ccd_map, "type", clade_count_map)
+    ccd_sample = sample_trees_from_geo_ccd(N_SAMPLES, geo_ccd_map, "type", clade_count_map)
 
     ccd_labels = ["ccd-sample"] * len(trees)
 
@@ -166,8 +184,9 @@ def mds_stuff():
     embedding = MDS(
         n_components=2,
         n_init=1,
-        dissimilarity="precomputed",
-        random_state=1337
+        metric="precomputed",
+        random_state=1337,
+        init="random"
     )
     rf_coords = embedding.fit_transform(pwd_rf)
 
@@ -299,7 +318,7 @@ def distance_matrix_summary_trees():
         cur = read_nexus_trees(f"../data/{file}", parse_taxon_map=True)
         sum_tree_list[label] = cur
 
-    from brokilon.metrics import robinson_foulds, deme_robinson_foulds
+    from brokilon.metrics import robinson_foulds, extended_robinson_foulds
 
     for t in sum_tree_list:
         for t1 in sum_tree_list:
@@ -309,7 +328,7 @@ def distance_matrix_summary_trees():
                     sum_tree_list[t][0][0],
                     sum_tree_list[t1][0][0]
                 ),
-                deme_robinson_foulds(
+                extended_robinson_foulds(
                     sum_tree_list[t][0][0],
                     sum_tree_list[t1][0][0],
                     annotation_str="type"
@@ -373,5 +392,5 @@ def pwd_distribution():
 
 if __name__ == '__main__':
     mds_stuff()
-    # distance_matrix_summary_trees()
-    # pwd_distribution()
+    distance_matrix_summary_trees()
+    pwd_distribution()

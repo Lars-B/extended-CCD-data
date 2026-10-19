@@ -1,7 +1,11 @@
 import os
 import sys
+import random
+
 
 if __name__ == "__main__":
+    random.seed(42)
+
     N_SAMPLES = 750
 
     sys.path.append("../../geography/scripts")
@@ -9,6 +13,18 @@ if __name__ == "__main__":
 
     posterior_file = "../data/paper_run/measles-filtered.trees"
     subsample_file = f"../data/paper_run/subsampled_{N_SAMPLES}.trees"
+
+    from pathlib import Path
+    import zipfile
+
+    zip_file = posterior_file.with_suffix(posterior_file.suffix + ".zip")
+
+    if not posterior_file.exists() and zip_file.exists():
+        with zipfile.ZipFile(zip_file, "r") as z:
+            z.extractall(posterior_file.parent)
+
+    if not posterior_file.exists():
+        raise FileNotFoundError(f"Tree file not found: {posterior_file}")
 
     if not os.path.exists(subsample_file):
         subsample_beast_tree_file(
@@ -82,8 +98,9 @@ if __name__ == "__main__":
     embedding = MDS(
         n_components=2,
         n_init=1,
-        dissimilarity="precomputed",
-        random_state=1337
+        metric="precomputed",
+        random_state=1337,
+        init="random"
     )
     rf_coords = embedding.fit_transform(pwd_rf)
 

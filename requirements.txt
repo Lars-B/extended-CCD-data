@@ -1,0 +1,4 @@
+numpy==2.5.4
+scikit-learn==1.9.1
+matplotlib==3.11.2
+brokilon @ git+https://github.com/Lars-B/pyccd@fd9eaa93bcfb365e1b3f6a10e64a4866111dcd4b
